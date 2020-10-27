@@ -6,15 +6,39 @@ const keys = require('../config/keys')
 // Ensures we only bring in the model only once
 const User = mongoose.model('users')
 
+
+// set the user info into a cookie
+passport.serializeUser((user, done) => {
+    done(null, user.id)
+})
+
+// set the cookie into a mongoose model
+passport.deserializeUser((id, done) => {
+    User.findById(id)
+        .then(user => {
+            done(null, user)
+        })
+})
+
 passport.use(
     new GoogleStrategy(
         {
             clientID: keys.googleClientID,
             clientSecret: keys.googleClientSecret,
-            callbackURL: keys.googleCallbackURL
+            callbackURL: '/auth/google/callback'
         },
         (accessToken, refreshToken, profile, done) => {
-            new User({ googleID: profile.id }).save()
+            User.findOne({ googleID: profile.id })
+                .then((existingUser) => {
+                    if (existingUser) {
+                        console.log("Found user")
+                        done(null, existingUser)
+                    } else {
+                        new User({ googleID: profile.id })
+                            .save()
+                            .then(user => done(null, user))
+                    }
+                })
         }
     )
 );
