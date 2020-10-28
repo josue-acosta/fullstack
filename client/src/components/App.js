@@ -4,9 +4,8 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 
 // components
-import HeaderBar from './HeaderBar'
 import HomePage from './HomePage'
-import Dashboard from './Dashboard'
+import DashboardPage from './DashboardPage'
 
 
 class App extends Component {
@@ -15,12 +14,12 @@ class App extends Component {
     }
 
     render() {
+        console.log(this.props.auth)
         return (
             <BrowserRouter>
-                <HeaderBar />
                 <Switch>
                     <Route exact path='/' component={HomePage} />
-                    <Route path='/dashboard' component={Dashboard} />
+                    <Route path='/dashboard' component={DashboardPage} />
                 </Switch>
             </BrowserRouter>
         );

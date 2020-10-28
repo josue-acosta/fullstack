@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 // components
-import Hero from './dashbaord/Hero'
+import Layout from './dashboard/Layout'
+import DashboardSkeleton from './dashboard/DashboardSkeleton'
 
 // styles
 import { withStyles } from "@material-ui/core/styles";
@@ -15,15 +16,15 @@ const styles = theme => ({
     },
 });
 
-class Dashboard extends Component {
+class DashboardPage extends Component {
     renderContent() {
         switch (this.props.auth) {
             case null:
-                return <Typography variant="h2">Skeleton?</Typography>;
+                return <DashboardSkeleton />;
             case false:
                 return <Typography variant="h2">Not Authorized</Typography>
             default:
-                return <Hero />
+                return <Layout />
         }
     }
 
@@ -41,4 +42,4 @@ function mapStateToProps({ auth }) {
     return { auth };
 }
 
-export default withStyles(styles, { withTheme: true })(connect(mapStateToProps)(Dashboard));
+export default withStyles(styles, { withTheme: true })(connect(mapStateToProps)(DashboardPage));
