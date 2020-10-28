@@ -24,14 +24,17 @@ const styles = theme => ({
 });
 
 class HeaderBar extends Component {
-    renderLoginButton() {
+    renderContent() {
         switch (this.props.auth) {
             case null:
                 return;
             case false:
                 return <Button color="inherit" component={Link} href='/auth/google'>Login</Button>
             default:
-                return <Button color="inherit" component={Link} href="/api/logout">Logout</Button>
+                return [
+                    <Button color="inherit" component={NavLink} to='/dashboard' >Dashboard</Button>,
+                    <Button color="inherit" component={Link} href="/api/logout">Logout</Button>
+                ]
         }
     }
 
@@ -43,10 +46,9 @@ class HeaderBar extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="h6" className={classes.title}>
-                            <NavLink to='/' className={classes.logo} >Mi Sistema</NavLink>
+                            <NavLink to={this.props.auth ? '/dashboard' : '/'} className={classes.logo} >Mi Sistema</NavLink>
                         </Typography>
-                        <Button color="inherit" component={NavLink} to='/dashboard' >Dashboard</Button>
-                        {this.renderLoginButton()}
+                        {this.renderContent()}
                     </Toolbar>
                 </AppBar>
             </div>

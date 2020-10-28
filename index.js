@@ -1,5 +1,6 @@
 const express = require('express');
 const userModel = require('./models/user');
+const surveyModel = require('./models/survey');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const passportConfig = require('./services/passport');
@@ -25,6 +26,8 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
 // // routes
 // auth routes
 require('./routes/authRoutes')(app)
+// survey routes
+require('./routes/surveyRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {

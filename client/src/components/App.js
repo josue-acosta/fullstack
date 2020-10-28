@@ -5,7 +5,7 @@ import * as actions from '../actions'
 
 // components
 import HeaderBar from './HeaderBar'
-import Landing from './Landing'
+import HomePage from './HomePage'
 import Dashboard from './Dashboard'
 
 
@@ -19,7 +19,7 @@ class App extends Component {
             <BrowserRouter>
                 <HeaderBar />
                 <Switch>
-                    <Route exact path='/' component={Landing} />
+                    <Route exact path='/' component={HomePage} />
                     <Route path='/dashboard' component={Dashboard} />
                 </Switch>
             </BrowserRouter>
