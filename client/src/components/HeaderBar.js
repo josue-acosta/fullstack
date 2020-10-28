@@ -29,11 +29,11 @@ class HeaderBar extends Component {
             case null:
                 return;
             case false:
-                return <Button color="inherit" component={Link} href='/auth/google'>Login</Button>
+                return <Button key="login" color="inherit" component={Link} href='/auth/google'>Login</Button>
             default:
                 return [
-                    <Button color="inherit" component={NavLink} to='/dashboard' >Dashboard</Button>,
-                    <Button color="inherit" component={Link} href="/api/logout">Logout</Button>
+                    <Button key="dashboard" color="inherit" component={NavLink} to='/dashboard'>Dashboard</Button>,
+                    <Button key="logout" color="inherit" component={Link} href='/api/logout'>Logout</Button>
                 ]
         }
     }
@@ -46,7 +46,7 @@ class HeaderBar extends Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="h6" className={classes.title}>
-                            <NavLink to={this.props.auth ? '/dashboard' : '/'} className={classes.logo} >Mi Sistema</NavLink>
+                            <NavLink to='/' className={classes.logo} >Mi Sistema</NavLink>
                         </Typography>
                         {this.renderContent()}
                     </Toolbar>

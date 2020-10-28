@@ -28,6 +28,8 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
 require('./routes/authRoutes')(app)
 // survey routes
 require('./routes/surveyRoutes')(app)
+// dashboard routes
+require('./routes/dashboardRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {

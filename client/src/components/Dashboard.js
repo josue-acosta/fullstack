@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+// components
+import Hero from './dashbaord/Hero'
+
 // styles
 import { withStyles } from "@material-ui/core/styles";
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
@@ -19,12 +23,17 @@ class Dashboard extends Component {
             case false:
                 return <Typography variant="h2">Not Authorized</Typography>
             default:
-                return <Typography variant="h2">Dashboard</Typography>
+                return <Hero />
         }
     }
 
     render() {
-        return this.renderContent()
+        return (
+            <>
+                <CssBaseline />
+                {this.renderContent()}
+            </>
+        )
     }
 }
 
