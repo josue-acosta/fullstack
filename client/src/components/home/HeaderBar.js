@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+// components
+import LoginButton from '../LoginButton'
+
 // styles
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
     root: {
@@ -29,12 +31,9 @@ class HeaderBar extends Component {
             case null:
                 return;
             case false:
-                return <Button key="login" color="inherit" component={Link} href='/auth/google'>Login</Button>
+                return;
             default:
-                return [
-                    <Button key="dashboard" color="inherit" component={NavLink} to='/dashboard'>Dashboard</Button>,
-                    <Button key="logout" color="inherit" component={Link} href='/api/logout'>Logout</Button>
-                ]
+                return <Button key="dashboard" color="inherit" component={NavLink} to='/dashboard'>Dashboard</Button>
         }
     }
 
@@ -49,6 +48,7 @@ class HeaderBar extends Component {
                             <NavLink to='/' className={classes.logo} >Mi Sistema</NavLink>
                         </Typography>
                         {this.renderContent()}
+                        <LoginButton auth={this.props.auth} />
                     </Toolbar>
                 </AppBar>
             </div>
