@@ -22,10 +22,21 @@ app.use(passport.session());
 // database configuration
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
+// // routes
 // auth routes
 require('./routes/authRoutes')(app)
 
 
+if (process.env.NODE_ENV === 'production') {
+    // express will serve production assets ( i.e client/build/main.js, client/build/main.css )
+    app.use(express.static('client/build'))
+
+    // express will serve client/build/index.html if route is not in server
+    const path = require('path')
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 // run app
 const PORT = process.env.PORT || 5000;
