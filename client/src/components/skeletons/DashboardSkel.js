@@ -3,7 +3,7 @@ import React from 'react';
 // style
 import Skeleton from '@material-ui/lab/Skeleton';
 
-const DashboardSkeleton = () => {
+const DashboardSkel = () => {
     return (
         <>
             <Skeleton variant="text" />
@@ -13,4 +13,4 @@ const DashboardSkeleton = () => {
     );
 }
 
-export default DashboardSkeleton;
+export default DashboardSkel;

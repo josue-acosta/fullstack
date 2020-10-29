@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 
 // components
-import HomePage from './HomePage'
-import DashboardPage from './DashboardPage'
+import HomePage from './website/HomePage'
+import DashboardPage from './dashboard/DashboardPage'
 
 
 class App extends Component {

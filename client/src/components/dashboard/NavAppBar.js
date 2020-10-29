@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 // components
-import LoginButton from '../LoginButton'
+import LoginButton from '../website/LoginButton'
 
 // style
 import { makeStyles } from '@material-ui/core/styles';

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 // components
-import Layout from './dashboard/Layout'
-import DashboardSkeleton from './dashboard/DashboardSkeleton'
+import Layout from './Layout'
+import DashboardSkel from '../skeletons/DashboardSkel'
 
 // styles
 import { withStyles } from "@material-ui/core/styles";
@@ -20,7 +20,7 @@ class DashboardPage extends Component {
     renderContent() {
         switch (this.props.auth) {
             case null:
-                return <DashboardSkeleton />;
+                return <DashboardSkel />;
             case false:
                 return <Typography variant="h2">Not Authorized</Typography>
             default:

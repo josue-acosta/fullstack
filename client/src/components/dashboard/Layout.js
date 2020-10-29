@@ -5,8 +5,8 @@ import { Route } from 'react-router-dom'
 // components
 import NavAppBar from './NavAppBar'
 import NavDrawer from './NavDrawer'
-import NewOrder from '../NewOrder'
-import ViewOrders from '../ViewOrders'
+import NewOrder from './NewOrder'
+import ViewOrders from './ViewOrders'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';

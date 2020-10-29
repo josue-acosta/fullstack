@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 // components
-import LoginButton from '../LoginButton'
+import LoginButton from './LoginButton'
 
 // styles
 import { withStyles } from "@material-ui/core/styles";

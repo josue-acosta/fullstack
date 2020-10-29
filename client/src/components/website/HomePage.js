@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import HeaderBar from './home/HeaderBar'
+import HeaderBar from './HeaderBar'
 import Copyright from './Copyright'
 
 // styles
