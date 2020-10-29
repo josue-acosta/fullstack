@@ -1,5 +1,9 @@
 import React from 'react';
 
+// components
+import HeaderBar from './HeaderBar'
+import Copyright from './Copyright'
+
 // styles
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -11,20 +15,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -60,12 +51,13 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album() {
+export default function HomePage() {
     const classes = useStyles();
 
     return (
         <React.Fragment>
             <CssBaseline />
+            <HeaderBar />
             <main>
                 {/* Hero */}
                 <div className={classes.heroContent}>

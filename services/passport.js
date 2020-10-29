@@ -32,11 +32,10 @@ passport.use(
             // http://www.passportjs.org/docs/downloads/html/#strategies
             const existingUser = await User.findOne({ googleID: profile.id })
 
-            if (existingUser) {
-                done(null, existingUser)
+            if (existingUser?.googleID === keys.myGoogleID) {
+                done(null, existingUser);
             } else {
-                const user = await new User({ googleID: profile.id }).save()
-                done(null, user)
+                done(null, false);
             }
         }
     )

@@ -4,9 +4,8 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 
 // components
-import HeaderBar from './HeaderBar'
-import Landing from './Landing'
-import Dashboard from './Dashboard'
+import HomePage from './website/HomePage'
+import DashboardPage from './dashboard/DashboardPage'
 
 
 class App extends Component {
@@ -17,10 +16,9 @@ class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                <HeaderBar />
                 <Switch>
-                    <Route exact path='/' component={Landing} />
-                    <Route path='/dashboard' component={Dashboard} />
+                    <Route exact path='/' component={HomePage} />
+                    <Route path='/dashboard' component={DashboardPage} />
                 </Switch>
             </BrowserRouter>
         );

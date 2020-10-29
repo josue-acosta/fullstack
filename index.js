@@ -1,5 +1,7 @@
 const express = require('express');
 const userModel = require('./models/user');
+const surveyModel = require('./models/survey');
+const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const passportConfig = require('./services/passport');
@@ -10,6 +12,7 @@ const keys = require('./config/keys');
 const app = express();
 
 // passport configuration
+app.use(bodyParser.json());
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -25,6 +28,10 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
 // // routes
 // auth routes
 require('./routes/authRoutes')(app)
+// survey routes
+require('./routes/surveyRoutes')(app)
+// dashboard routes
+require('./routes/dashboardRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {
