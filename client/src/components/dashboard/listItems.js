@@ -86,11 +86,9 @@ export const secondaryListItems = (
             <ListItemText primary="Go home" />
         </ListItem>
 
-        <ListItem button>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Last quarter" />
+        <ListItem button component={NavLink} to="/dashboard/new-survey">
+            <ListItemIcon><AssignmentIcon /></ListItemIcon>
+            <ListItemText primary="New Survey" />
         </ListItem>
 
         <ListItem button>

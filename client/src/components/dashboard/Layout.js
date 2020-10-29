@@ -3,10 +3,14 @@ import { Route } from 'react-router-dom'
 
 
 // components
+// ---- navigation
 import NavAppBar from './NavAppBar'
 import NavDrawer from './NavDrawer'
+
+// ---- pages
 import NewOrder from './NewOrder'
 import ViewOrders from './ViewOrders'
+import SurveyNew from './surveys/SurveyNew'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -53,6 +57,7 @@ export default function Dashboard() {
                     <Grid container spacing={3}>
                         <Route path='/dashboard/new-order' component={NewOrder} />
                         <Route path='/dashboard/view-orders' component={ViewOrders} />
+                        <Route path='/dashboard/new-survey' component={SurveyNew} />
                     </Grid>
                 </Container>
             </main>

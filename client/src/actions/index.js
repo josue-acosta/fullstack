@@ -17,3 +17,15 @@ export const fetchOrders = () => async dispatch => {
 
     dispatch({ type: FETCH_ORDERS, payload: res.data });
 }
+
+
+export const submitSurvey = values => async dispatch => {
+    console.log('submitSurvey values:')
+    console.log(values)
+
+    const res = await axios.post('/api/surveys', values)
+    console.log(res)
+
+    return { type: "submit_survey" }
+    // dispatch({ type: FETCH_USER, payload: res.data })
+}
