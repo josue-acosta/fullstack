@@ -84,11 +84,10 @@ const validate = (values) => {
         "title",
         "subject",
         "body",
-        // "recipients"
+        "recipients"
     ]
 
-    // errors.recipients = validateEmails(values.recipients || '');
-    // email@example.com
+    errors.recipients = validateEmails(values.recipients || '');
 
     requiredFields.forEach(field => {
         if (!values[field]) {

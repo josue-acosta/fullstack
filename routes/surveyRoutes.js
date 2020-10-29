@@ -4,11 +4,7 @@ const requireLogin = require('../middlewares/requireLogin')
 const Survey = mongoose.model('surveys')
 
 module.exports = app => {
-    // app.post('/api/surveys', requireLogin, async (req, res) => {
-    app.post('/api/surveys', async (req, res) => {
-        console.log("Hello from app.post('/api/surveys')")
-        console.log(req.user)
-        console.log(req.body)
+    app.post('/api/surveys', requireLogin, (req, res) => {
         const { title, subject, body, recipients } = req.body;
 
         const survey = new Survey({
@@ -21,8 +17,8 @@ module.exports = app => {
         });
 
         try {
-            await survey.save();
-            res.send(user);
+            survey.save();
+            res.send(req.user);
         } catch (err) {
             res.status(422).send(err);
         }

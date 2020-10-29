@@ -19,13 +19,10 @@ export const fetchOrders = () => async dispatch => {
 }
 
 
-export const submitSurvey = values => async dispatch => {
-    console.log('submitSurvey values:')
-    console.log(values)
-
+// function submitSurvey returns a function with the argument dispatch
+export const submitSurvey = (values, history) => async dispatch => {
     const res = await axios.post('/api/surveys', values)
-    console.log(res)
 
-    return { type: "submit_survey" }
-    // dispatch({ type: FETCH_USER, payload: res.data })
+    history.push('/dashboard')
+    dispatch({ type: FETCH_USER, payload: res.data })
 }

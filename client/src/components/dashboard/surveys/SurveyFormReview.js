@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../../../actions'
 
@@ -12,7 +13,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button'
 
-const SurveyFormReview = ({ onSurveySubmit, formValues, submitSurvey }) => {
+const SurveyFormReview = ({ onSurveySubmit, formValues, submitSurvey, history }) => {
     return (
         <>
             <TableContainer component={Paper}>
@@ -51,7 +52,7 @@ const SurveyFormReview = ({ onSurveySubmit, formValues, submitSurvey }) => {
             <Button
                 variant="contained"
                 color="primary"
-                onClick={() => submitSurvey(formValues)}
+                onClick={() => submitSurvey(formValues, history)}
             >
                 Save
             </Button>
@@ -68,4 +69,4 @@ const mapStateToProps = (state) => {
     return { formValues: state.form.surveyForm.values }
 }
 
-export default connect(mapStateToProps, actions)(SurveyFormReview);
+export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));

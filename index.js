@@ -1,6 +1,7 @@
 const express = require('express');
 const userModel = require('./models/user');
 const surveyModel = require('./models/survey');
+const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const passportConfig = require('./services/passport');
@@ -11,6 +12,7 @@ const keys = require('./config/keys');
 const app = express();
 
 // passport configuration
+app.use(bodyParser.json());
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
