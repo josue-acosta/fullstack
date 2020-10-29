@@ -1,10 +1,12 @@
 import React from 'react';
+import { Route } from 'react-router-dom'
 
 
 // components
 import NavAppBar from './NavAppBar'
 import NavDrawer from './NavDrawer'
-import HomePage from '../HomePage'
+import NewOrder from '../NewOrder'
+import ViewOrders from '../ViewOrders'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -49,7 +51,8 @@ export default function Dashboard() {
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
-                        {/* Insert content here */}
+                        <Route path='/dashboard/new-order' component={NewOrder} />
+                        <Route path='/dashboard/view-orders' component={ViewOrders} />
                     </Grid>
                 </Container>
             </main>
