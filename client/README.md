@@ -3,6 +3,8 @@
 ### Create a Mongoose Model
 
 ### Create Express routes
+Import Monggose Model to server/index file
+Add routes to the server/index file
 
 ### Create Reducer
 

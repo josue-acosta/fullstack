@@ -30,9 +30,9 @@ export const fetchSurveys = () => async dispatch => {
 
 // ORDERS
 export const submitOrder = (values, history) => async dispatch => {
-    const res = await axios.post('/api/new-order', values);
+    const res = await axios.post('/api/submit-order', values);
 
-    // history.push('/orders')
+    history.push('/dashboard/orders')
     dispatch({ type: FETCH_USER, payload: res.data });
 }
 

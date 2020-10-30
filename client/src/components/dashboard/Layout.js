@@ -8,8 +8,8 @@ import NavAppBar from './NavAppBar'
 import NavDrawer from './NavDrawer'
 
 // ---- pages
-import OrderNew from './orders/NewOrder'
-import OrderList from './orders/ViewOrders'
+import OrderNew from './orders/OrderNew'
+import OrderTable from './orders/OrderTable'
 import SurveyNew from './surveys/SurveyNew'
 import SurveyList from './surveys/SurveyList'
 
@@ -57,7 +57,7 @@ export default function Dashboard() {
                 <Container maxWidth='lg' className={classes.container}>
                     <Grid container spacing={3}>
                         <Route path='/dashboard/new-order' component={OrderNew} />
-                        <Route path='/dashboard/orders' component={OrderList} />
+                        <Route path='/dashboard/orders' component={OrderTable} />
                         <Route path='/dashboard/new-survey' component={SurveyNew} />
                         <Route path='/dashboard/surveys' component={SurveyList} />
                     </Grid>

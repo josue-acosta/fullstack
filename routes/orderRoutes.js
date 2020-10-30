@@ -4,13 +4,13 @@ const requireLogin = require('../middlewares/requireLogin')
 const Order = mongoose.model('orders')
 
 module.exports = app => {
-    // app.get('/api/survery-list', requireLogin, async (req, res) => {
-    //     const surveys = await Survey.find({ _user: req.user.id }).select({ recipients: false });
+    app.get('/api/orders', requireLogin, async (req, res) => {
+        const orders = await Order.find({})
 
-    //     res.send(surveys);
-    // })
+        res.send(orders);
+    })
 
-    app.post('/api/new-order', requireLogin, (req, res) => {
+    app.post('/api/submit-order', requireLogin, (req, res) => {
         const {
             orderNumber,
             name,

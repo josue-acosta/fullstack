@@ -1,6 +1,7 @@
 const express = require('express');
 const userModel = require('./models/user');
 const surveyModel = require('./models/survey');
+const orderModel = require('./models/order');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -11,7 +12,6 @@ const keys = require('./config/keys');
 // app configuration
 const app = express();
 
-// passport configuration
 app.use(bodyParser.json());
 app.use(
     cookieSession({
@@ -32,6 +32,8 @@ require('./routes/authRoutes')(app)
 require('./routes/surveyRoutes')(app)
 // dashboard routes
 require('./routes/dashboardRoutes')(app)
+// order routes
+require('./routes/orderRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {
