@@ -10,17 +10,17 @@ const ViewOrders = () => {
     const loading = true
 
     return (
-        <Grid container wrap="nowrap">
-            <Box width="100%">
-                <Typography variant="h1">
+        <Grid container wrap='nowrap'>
+            <Box width='100%'>
+                <Typography variant='h1'>
                     {loading ? <Skeleton /> : 'View Orders'}
                 </Typography>
 
-                <Typography variant="h3">
+                <Typography variant='h3'>
                     {loading ? <Skeleton /> : 'Table Header'}
                 </Typography>
 
-                <Skeleton height={400} style={{ transform: "scale(1)" }} />
+                <Skeleton height={400} style={{ transform: 'scale(1)' }} />
             </Box>
         </Grid>
     );

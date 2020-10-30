@@ -8,8 +8,8 @@ import NavAppBar from './NavAppBar'
 import NavDrawer from './NavDrawer'
 
 // ---- pages
-import NewOrder from './NewOrder'
-import ViewOrders from './ViewOrders'
+import OrderNew from './orders/NewOrder'
+import OrderList from './orders/ViewOrders'
 import SurveyNew from './surveys/SurveyNew'
 import SurveyList from './surveys/SurveyList'
 
@@ -54,10 +54,10 @@ export default function Dashboard() {
 
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
-                <Container maxWidth="lg" className={classes.container}>
+                <Container maxWidth='lg' className={classes.container}>
                     <Grid container spacing={3}>
-                        <Route path='/dashboard/new-order' component={NewOrder} />
-                        <Route path='/dashboard/view-orders' component={ViewOrders} />
+                        <Route path='/dashboard/new-order' component={OrderNew} />
+                        <Route path='/dashboard/orders' component={OrderList} />
                         <Route path='/dashboard/new-survey' component={SurveyNew} />
                         <Route path='/dashboard/surveys' component={SurveyList} />
                     </Grid>
