@@ -91,11 +91,11 @@ export const secondaryListItems = (
             <ListItemText primary="New Survey" />
         </ListItem>
 
-        <ListItem button>
+        <ListItem button component={NavLink} to="/dashboard/surveys">
             <ListItemIcon>
                 <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary="Year-end sale" />
+            <ListItemText primary="View Surveys" />
         </ListItem>
 
 
