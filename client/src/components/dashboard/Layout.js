@@ -11,6 +11,7 @@ import NavDrawer from './NavDrawer'
 import NewOrder from './NewOrder'
 import ViewOrders from './ViewOrders'
 import SurveyNew from './surveys/SurveyNew'
+import SurveyList from './surveys/SurveyList'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -58,6 +59,7 @@ export default function Dashboard() {
                         <Route path='/dashboard/new-order' component={NewOrder} />
                         <Route path='/dashboard/view-orders' component={ViewOrders} />
                         <Route path='/dashboard/new-survey' component={SurveyNew} />
+                        <Route path='/dashboard/surveys' component={SurveyList} />
                     </Grid>
                 </Container>
             </main>
