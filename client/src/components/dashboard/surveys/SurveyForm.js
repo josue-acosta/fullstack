@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import validateEmails from '../../../util/validateEmails';
 
 // components
-import FormTextField from './FormTextField'
+import FormTextField from '../../formFields/FormTextField'
 
 // styles
 import { withStyles } from '@material-ui/core/styles';

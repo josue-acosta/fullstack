@@ -3,8 +3,14 @@ import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 
 
+// data
+import { sizes, flavors, fillings } from '../../formFields/OrderFormOptions'
+
 // components
-import FormTextField from '../surveys/FormTextField'
+import FormTextField from '../../formFields/FormTextField'
+import FormSelectField from '../../formFields/FormSelectField'
+import FormCheckBox from '../../formFields/FormCheckBox'
+import FormDatePicker from '../../formFields/FormDatePicker'
 
 // styles
 import { withStyles } from '@material-ui/core/styles';
@@ -50,67 +56,60 @@ class OrderForm extends Component {
                                 />
                             </Grid>
 
-                            {/* 
                             <Grid item xs={12}>
                                 <Field
                                     name='dateTime'
                                     label='Date &amp; Time'
-                                    component={TODO_DATE_TIME_FIELD}
+                                    component={FormDatePicker}
                                     fullWidth
-                                /> 
+                                />
                             </Grid>
-                            */}
 
-                            {/*
                             <Grid item xs={4}>
                                 <Field
                                     name='cakeSize'
                                     label='Cake Size'
-                                    component={TODO_SELECT_FIELD}
+                                    component={FormSelectField}
                                     fullWidth
-                                /> 
+                                    options={sizes}
+                                />
                             </Grid>
-                            */}
 
-                            {/* 
                             <Grid item xs={4}>
                                 <Field
                                     name='flavor1'
                                     label='Flavor 1'
-                                    component={TODO_SELECT_FIELD}
+                                    component={FormSelectField}
                                     fullWidth
-                                /> 
+                                    options={flavors}
+                                />
 
                                 <Field
                                     name='flavor2'
                                     label='Flavor 2'
-                                    component={TODO_SELECT_FIELD}
+                                    component={FormSelectField}
                                     fullWidth
+                                    options={flavors}
                                 />
                             </Grid>
-                            */}
 
-                            { /* 
                             <Grid item xs={4}>
                                 <Field
                                     name='filling'
                                     label='Filling'
-                                    component={TODO_SELECT_FIELD}
+                                    component={FormSelectField}
                                     fullWidth
-                                /> 
+                                    options={fillings}
+                                />
                             </Grid>
-                            */}
 
-                            { /* 
                             <Grid item xs={12}>
                                 <Field
                                     name='printOut'
-                                    label='Prnt Out'
-                                    component={TODO_CHECKBOX_FIELD}
-                                    fullWidth
-                                /> 
+                                    label='Print Out'
+                                    component={FormCheckBox}
+                                />
                             </Grid>
-                            */}
 
                             <Grid item xs={4}>
                                 <Field
@@ -190,12 +189,6 @@ class OrderForm extends Component {
 
 //     return errors;
 // }
-
-// export default withStyles(styles, { withTheme: true })(reduxForm({
-//     validate,
-//     form: 'surveyForm',
-//     destroyOnUnmount: false
-// })(SurveyForm));
 
 export default withStyles(styles, { withTheme: true })(reduxForm({
     // validate,
