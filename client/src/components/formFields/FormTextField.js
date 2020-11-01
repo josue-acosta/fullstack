@@ -1,6 +1,6 @@
 import React from 'react';
 
-// style
+// styles
 import TextField from '@material-ui/core/TextField'
 
 const FormTextField = ({ input, label, fullwidth, meta: { touched, error }, ...custom }) => {

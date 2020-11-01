@@ -1,6 +1,6 @@
 import React from 'react';
 
-// style
+// styles
 import Checkbox from '@material-ui/core/Checkbox'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 
