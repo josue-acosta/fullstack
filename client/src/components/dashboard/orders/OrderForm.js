@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 // data
-import { sizes, flavors, fillings } from '../../formFields/OrderFormOptions'
+import { sizes, flavors, fillings } from '../../../data/OrderFormOptions'
 
 // components
 import FormTextField from '../../formFields/FormTextField'
@@ -15,15 +15,16 @@ import FormDatePicker from '../../formFields/FormDatePicker'
 // styles
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
     root: {
-        backgroundColor: 'white',
+        width: '100%',
     },
-    button: {
+    spacer: {
         marginTop: 20
     }
 });
@@ -33,165 +34,173 @@ class OrderForm extends Component {
         const { classes } = this.props;
 
         return (
-            <>
-                <Typography variant="h5" >New Order</Typography>
-                <Box className={classes.root} p={2}>
+            <Grid container justify="center" >
+                <Card className={classes.root}>
                     <form onSubmit={this.props.handleSubmit(this.props.onOrderSubmit)} >
-                        <Grid container spacing={3}>
-                            <Grid item xs={6}>
-                                <Field
-                                    name='name'
-                                    label='Name'
-                                    component={FormTextField}
-                                    fullWidth
-                                />
+                        <CardContent>
+                            <Grid container spacing={3}>
+                                <Grid item xs={6}>
+                                    <Field
+                                        name='name'
+                                        label='Name'
+                                        component={FormTextField}
+                                        fullWidth
+                                    />
+                                </Grid>
+
+                                <Grid item xs={6}>
+                                    <Field
+                                        name='phoneNumber'
+                                        label='Phone Number'
+                                        component={FormTextField}
+                                        fullWidth
+                                    />
+                                </Grid>
+
+                                <Grid item xs={12}>
+                                    <Field
+                                        name='dateTime'
+                                        label='Date &amp; Time'
+                                        component={FormDatePicker}
+                                        fullWidth
+                                    />
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                    <Field
+                                        name='cakeSize'
+                                        label='Cake Size'
+                                        component={FormSelectField}
+                                        fullWidth
+                                        options={sizes}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                    <Field
+                                        name='flavor1'
+                                        label='Flavor 1'
+                                        component={FormSelectField}
+                                        fullWidth
+                                        options={flavors}
+                                    />
+
+                                    <Field
+                                        name='flavor2'
+                                        label='Flavor 2'
+                                        component={FormSelectField}
+                                        fullWidth
+                                        className={classes.spacer}
+                                        options={flavors}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                    <Field
+                                        name='filling'
+                                        label='Filling'
+                                        component={FormSelectField}
+                                        fullWidth
+                                        options={fillings}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={12}>
+                                    <Field
+                                        name='printOut'
+                                        label='Print Out'
+                                        component={FormCheckBox}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                    <Field
+                                        name='celebratedName'
+                                        label='Celebrated Name'
+                                        component={FormTextField}
+                                        fullWidth
+                                    />
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                    <Field
+                                        name='celebratedAge'
+                                        label='Celebrated Age'
+                                        component={FormTextField}
+                                        fullWidth
+                                    />
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                    <Field
+                                        name='celebratedText'
+                                        label='Celebrated Text'
+                                        component={FormTextField}
+                                        fullWidth
+                                    />
+                                </Grid>
+
+                                <Grid item xs={12}>
+                                    <Field
+                                        name='price'
+                                        label='Price'
+                                        component={FormTextField}
+                                        fullWidth
+                                    />
+                                </Grid>
                             </Grid>
+                        </CardContent>
 
-                            <Grid item xs={6}>
-                                <Field
-                                    name='phoneNumber'
-                                    label='Phone Number'
-                                    component={FormTextField}
-                                    fullWidth
-                                />
-                            </Grid>
-
-                            <Grid item xs={12}>
-                                <Field
-                                    name='dateTime'
-                                    label='Date &amp; Time'
-                                    component={FormDatePicker}
-                                    fullWidth
-                                />
-                            </Grid>
-
-                            <Grid item xs={4}>
-                                <Field
-                                    name='cakeSize'
-                                    label='Cake Size'
-                                    component={FormSelectField}
-                                    fullWidth
-                                    options={sizes}
-                                />
-                            </Grid>
-
-                            <Grid item xs={4}>
-                                <Field
-                                    name='flavor1'
-                                    label='Flavor 1'
-                                    component={FormSelectField}
-                                    fullWidth
-                                    options={flavors}
-                                />
-
-                                <Field
-                                    name='flavor2'
-                                    label='Flavor 2'
-                                    component={FormSelectField}
-                                    fullWidth
-                                    options={flavors}
-                                />
-                            </Grid>
-
-                            <Grid item xs={4}>
-                                <Field
-                                    name='filling'
-                                    label='Filling'
-                                    component={FormSelectField}
-                                    fullWidth
-                                    options={fillings}
-                                />
-                            </Grid>
-
-                            <Grid item xs={12}>
-                                <Field
-                                    name='printOut'
-                                    label='Print Out'
-                                    component={FormCheckBox}
-                                />
-                            </Grid>
-
-                            <Grid item xs={4}>
-                                <Field
-                                    name='celebratedName'
-                                    label='Celebrated Name'
-                                    component={FormTextField}
-                                    fullWidth
-                                />
-                            </Grid>
-
-                            <Grid item xs={4}>
-                                <Field
-                                    name='celebratedAge'
-                                    label='Celebrated Age'
-                                    component={FormTextField}
-                                    fullWidth
-                                />
-                            </Grid>
-
-                            <Grid item xs={4}>
-                                <Field
-                                    name='celebratedText'
-                                    label='Celebrated Text'
-                                    component={FormTextField}
-                                    fullWidth
-                                />
-                            </Grid>
-
-                            <Grid item xs={12}>
-                                <Field
-                                    name='price'
-                                    label='Price'
-                                    component={FormTextField}
-                                    fullWidth
-                                />
-                            </Grid>
-
-                            <Grid item xs={6}>
-                                <Button
-                                    color='primary'
-                                    className={classes.button}
-                                    component={Link}
-                                    to='/dashboard'>
-                                    Cancel
+                        <CardActions>
+                            <Button
+                                color='primary'
+                                component={Link}
+                                to='/dashboard'>
+                                Cancel
                                 </Button>
-                            </Grid>
 
-                            <Grid item xs={6} >
-                                <Button
-                                    type='submit'
-                                    variant='contained'
-                                    color='primary'
-                                    className={classes.button}>
-                                    Next
+                            <Button
+                                type='submit'
+                                variant='contained'
+                                color='primary'>
+                                Next
                                 </Button>
-                            </Grid>
-                        </Grid>
+                        </CardActions>
                     </form>
-                </Box>
-            </>
+                </Card>
+            </Grid>
         );
     }
 }
 
-// const validate = (values) => {
-//     const errors = {}
-//     const requiredFields = [
-//         'name',
-//         'phoneNumber'
-//     ]
+const validate = (values) => {
+    const errors = {}
+    const requiredFields = [
+        'name',
+        'phoneNumber',
+        'cakeSize',
+        'price',
+        'flavor1',
+        'flavor2',
+        'filling',
+        'dateTime',
+        'decoration',
+        'celebratedName',
+        'celebratedAge',
+        'celebratedText'
+    ]
 
-//     requiredFields.forEach(field => {
-//         if (!values[field]) {
-//             errors[field] = 'Required'
-//         }
-//     })
+    requiredFields.forEach(field => {
+        if (!values[field]) {
+            errors[field] = 'Required'
+        }
+    })
 
-//     return errors;
-// }
+    return errors;
+}
 
 export default withStyles(styles, { withTheme: true })(reduxForm({
-    // validate,
+    validate,
     form: 'orderForm',
     destroyOnUnmount: false
 })(OrderForm))

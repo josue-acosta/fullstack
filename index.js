@@ -2,6 +2,7 @@ const express = require('express');
 const userModel = require('./models/user');
 const surveyModel = require('./models/survey');
 const orderModel = require('./models/order');
+const globalModel = require('./models/global');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -23,7 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // database configuration
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 
 // // routes
 // auth routes

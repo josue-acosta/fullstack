@@ -14,7 +14,7 @@ const FormSelectField = ({ input, label, fullwidth, meta: { touched, error }, op
                 {...input}
                 {...custom}
             >
-                {options.map((option) => (
+                {options?.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
                         {option.label}
                     </MenuItem>
