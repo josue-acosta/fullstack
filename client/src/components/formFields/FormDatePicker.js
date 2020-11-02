@@ -1,6 +1,6 @@
 import React from 'react';
 
-// styles
+// style
 import TextField from '@material-ui/core/TextField';
 
 const FormDatePicker = ({ input, label, fullwidth, meta: { touched, error }, ...custom }) => {

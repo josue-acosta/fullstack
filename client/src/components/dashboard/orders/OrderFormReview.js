@@ -119,20 +119,6 @@ const OrderFormReview = ({ onOrderSubmit, formValues, submitOrder, history }) =>
 
                         <Grid item xs={12}>
                             <Field
-                                name='decoration'
-                                label='Decoration'
-                                disabled
-                                value={formValues.decoration}
-                                component={FormTextField}
-                                fullWidth
-                                multiline
-                                rows={4}
-                                variant="outlined"
-                            />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <Field
                                 name='printOut'
                                 label='Print Out'
                                 disabled

@@ -107,18 +107,6 @@ class OrderForm extends Component {
 
                                 <Grid item xs={12}>
                                     <Field
-                                        name='decoration'
-                                        label='Decoration'
-                                        component={FormTextField}
-                                        fullWidth
-                                        multiline
-                                        rows={4}
-                                        variant="outlined"
-                                    />
-                                </Grid>
-
-                                <Grid item xs={12}>
-                                    <Field
                                         name='printOut'
                                         label='Print Out'
                                         component={FormCheckBox}
