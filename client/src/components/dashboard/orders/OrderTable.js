@@ -5,7 +5,7 @@ import { fetchOrders } from '../../../actions'
 // components
 import OrderTableRow from './OrderTableRow'
 
-// style
+// styles
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';

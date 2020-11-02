@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_USER, FETCH_ORDERS, FETCH_SURVEYS } from './types'
+import { FETCH_USER, FETCH_ORDER, FETCH_ORDERS, FETCH_SURVEYS } from './types'
 
 // AUTHORIZATION
 // function fetchUser returns a function with the argument dispatch
@@ -34,6 +34,12 @@ export const submitOrder = (values, history) => async dispatch => {
 
     history.push('/dashboard/orders')
     dispatch({ type: FETCH_USER, payload: res.data });
+}
+
+export const fetchOrder = orderID => async dispatch => {
+    const res = await axios.get(`/api/order/${orderID}`);
+
+    dispatch({ type: FETCH_ORDER, payload: res.data });
 }
 
 

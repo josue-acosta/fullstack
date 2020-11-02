@@ -1,6 +1,6 @@
 import React from 'react';
 
-// style
+// styles
 import Skeleton from '@material-ui/lab/Skeleton';
 
 const DashboardSkel = () => {
