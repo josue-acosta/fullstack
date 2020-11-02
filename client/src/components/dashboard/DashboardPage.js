@@ -6,7 +6,7 @@ import Layout from './Layout'
 import DashboardSkel from '../skeletons/DashboardSkel'
 
 // styles
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 
@@ -22,7 +22,7 @@ class DashboardPage extends Component {
             case null:
                 return <DashboardSkel />;
             case false:
-                return <Typography variant="h2">Not Authorized</Typography>
+                return <Typography variant='h2'>Not Authorized</Typography>
             default:
                 return <Layout />
         }

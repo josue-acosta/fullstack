@@ -50,7 +50,7 @@ const NavDrawer = ({ open, drawerClose }) => {
 
     return (
         <Drawer
-            variant="permanent"
+            variant='permanent'
             classes={{
                 paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
             }}
