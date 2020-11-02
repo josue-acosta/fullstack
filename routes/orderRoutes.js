@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const requireLogin = require('../middlewares/requireLogin')
+const keys = require('../config/keys');
 
 const Order = mongoose.model('orders')
 const Global = mongoose.model('global')
@@ -18,7 +19,7 @@ module.exports = app => {
     })
 
     app.post('/api/submit-order', requireLogin, async (req, res) => {
-        const id = '5f9df817657ba642c9e1a45c'
+        const id = keys.countNumber
         const { count } = await Global.findById(id)
 
         Global.findByIdAndUpdate(id, { $inc: { count: 1 } }, () => { })
