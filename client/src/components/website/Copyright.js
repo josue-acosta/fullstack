@@ -1,6 +1,6 @@
 import React from 'react';
 
-// styles
+// style
 import Typography from '@material-ui/core/Typography'
 
 const Copyright = () => {

@@ -10,7 +10,6 @@ import NavDrawer from './NavDrawer'
 // ---- pages
 import OrderNew from './orders/OrderNew'
 import OrderTable from './orders/OrderTable'
-import OrderView from './orders/OrderView'
 import SurveyNew from './surveys/SurveyNew'
 import SurveyList from './surveys/SurveyList'
 
@@ -59,8 +58,6 @@ export default function Dashboard() {
                     <Grid container spacing={3}>
                         <Route path='/dashboard/new-order' component={OrderNew} />
                         <Route path='/dashboard/orders' component={OrderTable} />
-                        <Route path='/dashboard/order/:orderID' component={OrderView} />
-
                         <Route path='/dashboard/new-survey' component={SurveyNew} />
                         <Route path='/dashboard/surveys' component={SurveyList} />
                     </Grid>

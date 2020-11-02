@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// styles
+// style
 import { withStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
