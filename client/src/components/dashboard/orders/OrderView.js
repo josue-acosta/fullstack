@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactToPrint from 'react-to-print';
 import { connect } from 'react-redux';
 import { fetchOrder } from '../../../actions'
 
@@ -10,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import PrintIcon from '@material-ui/icons/Print';
 
 class OrderView extends Component {
     componentDidMount() {
@@ -21,11 +23,24 @@ class OrderView extends Component {
             <>
                 <Card>
                     <CardActions>
-                        <Button variant="contained" color="primary" >Print</Button>
+                        <ReactToPrint
+                            trigger={() => {
+                                return (
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        // className={classes.button}
+                                        startIcon={<PrintIcon />} >
+                                        Print
+                                    </Button>
+                                )
+                            }}
+                            content={() => this.componentRef}
+                        />
                     </CardActions>
 
                     <CardContent>
-                        <OrderViewCard {...this.props.order} />
+                        <OrderViewCard ref={el => (this.componentRef = el)} {...this.props.order} />
                     </CardContent>
                 </Card>
             </>
