@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import LoginButton from './LoginButton'
 
 // styles
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from "@material-ui/core/styles";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -20,8 +20,8 @@ const styles = theme => ({
         flexGrow: 1
     },
     logo: {
-        color: 'white',
-        textDecoration: 'none'
+        color: "white",
+        textDecoration: "none"
     }
 });
 
@@ -33,7 +33,7 @@ class HeaderBar extends Component {
             case false:
                 return;
             default:
-                return <Button key='dashboard' color='inherit' component={NavLink} to='/dashboard'>Dashboard</Button>
+                return <Button key="dashboard" color="inherit" component={NavLink} to='/dashboard'>Dashboard</Button>
         }
     }
 
@@ -42,9 +42,9 @@ class HeaderBar extends Component {
 
         return (
             <div className={classes.root}>
-                <AppBar position='static'>
+                <AppBar position="static">
                     <Toolbar>
-                        <Typography variant='h6' className={classes.title}>
+                        <Typography variant="h6" className={classes.title}>
                             <NavLink to='/' className={classes.logo} >Mi Sistema</NavLink>
                         </Typography>
                         {this.renderContent()}

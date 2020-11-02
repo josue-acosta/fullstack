@@ -50,14 +50,14 @@ const SurveyFormReview = ({ onSurveySubmit, formValues, submitSurvey, history })
             </TableContainer>
 
             <Button
-                variant='contained'
-                color='primary'
+                variant="contained"
+                color="primary"
                 onClick={() => submitSurvey(formValues, history)}
             >
                 Save
             </Button>
             <Button
-                color='primary'
+                color="primary"
                 onClick={onSurveySubmit}>
                 Back
             </Button>
