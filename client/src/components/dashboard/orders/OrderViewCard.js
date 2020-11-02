@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { DateTime } from "luxon";
 
 // styles
 import { withStyles } from "@material-ui/core/styles";
@@ -60,7 +61,7 @@ class OrderViewCard extends Component {
                         <TextField
                             name="dateTime"
                             label="Date and Time"
-                            value={dateTime}
+                            value={DateTime.fromISO(dateTime).toFormat('ccc. d, h:mm a')}
                             fullWidth
                             InputProps={{
                                 startAdornment: (

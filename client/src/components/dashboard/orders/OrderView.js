@@ -29,7 +29,6 @@ class OrderView extends Component {
                                     <Button
                                         variant="contained"
                                         color="primary"
-                                        // className={classes.button}
                                         startIcon={<PrintIcon />} >
                                         Print
                                     </Button>
