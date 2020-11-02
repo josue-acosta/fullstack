@@ -38,6 +38,9 @@ class OrderTable extends Component {
                             </TableRow>
                         </TableHead>
                         <TableBody>
+                            {/* {this.state?.weekOrders.map(order =>
+                                <CakeOrder {...order} key={order.order_number} />
+                            )} */}
                             {this.props.orders.map(order =>
                                 <OrderTableRow {...order} key={order._id} />
                             )}
