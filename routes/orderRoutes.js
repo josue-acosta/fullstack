@@ -6,12 +6,6 @@ const Order = mongoose.model('orders')
 const Global = mongoose.model('global')
 
 module.exports = app => {
-    app.get('/api/order/:orderID', async (req, res) => {
-        const order = await Order.findById(req.params.orderID)
-
-        res.send(order);
-    })
-
     app.get('/api/orders', requireLogin, async (req, res) => {
         const orders = await Order.find({})
 
