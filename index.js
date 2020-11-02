@@ -1,6 +1,8 @@
 const express = require('express');
 const userModel = require('./models/user');
 const surveyModel = require('./models/survey');
+const orderModel = require('./models/order');
+const globalModel = require('./models/global');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
@@ -11,7 +13,6 @@ const keys = require('./config/keys');
 // app configuration
 const app = express();
 
-// passport configuration
 app.use(bodyParser.json());
 app.use(
     cookieSession({
@@ -23,7 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // database configuration
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 
 // // routes
 // auth routes
@@ -32,6 +33,8 @@ require('./routes/authRoutes')(app)
 require('./routes/surveyRoutes')(app)
 // dashboard routes
 require('./routes/dashboardRoutes')(app)
+// order routes
+require('./routes/orderRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {
