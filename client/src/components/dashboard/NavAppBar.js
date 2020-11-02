@@ -4,7 +4,7 @@ import clsx from 'clsx';
 // components
 import LoginButton from '../website/LoginButton'
 
-// style
+// styles
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -49,18 +49,18 @@ const NavAppBar = ({ open, drawerOpen }) => {
     const classes = useStyles();
 
     return (
-        <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+        <AppBar position='absolute' className={clsx(classes.appBar, open && classes.appBarShift)}>
             <Toolbar className={classes.toolbar}>
                 <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
+                    edge='start'
+                    color='inherit'
+                    aria-label='open drawer'
                     onClick={drawerOpen}
                     className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
                 >
                     <MenuIcon />
                 </IconButton>
-                <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+                <Typography component='h1' variant='h6' color='inherit' noWrap className={classes.title}>
                     Dashboard
                 </Typography>
                 <LoginButton auth={true} />
