@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_USER, FETCH_ORDER, FETCH_ORDERS, FETCH_SURVEYS } from './types'
+import { FETCH_USER, FETCH_ORDER, FETCH_ORDERS, FETCH_INGREDIENT, FETCH_INGREDIENTS } from './types'
 
 // AUTHORIZATION
 // function fetchUser returns a function with the argument dispatch
@@ -9,22 +9,6 @@ export const fetchUser = () => async dispatch => {
 
     // dispatch with an object once req is complete
     dispatch({ type: FETCH_USER, payload: res.data });
-}
-
-
-// SURVEY
-export const submitSurvey = (values, history) => async dispatch => {
-    const res = await axios.post('/api/surveys', values)
-
-    history.push('/dashboard')
-    dispatch({ type: FETCH_USER, payload: res.data })
-}
-
-
-export const fetchSurveys = () => async dispatch => {
-    const res = await axios.get('/api/survery-list');
-
-    dispatch({ type: FETCH_SURVEYS, payload: res.data });
 }
 
 
@@ -48,3 +32,25 @@ export const fetchOrders = () => async dispatch => {
 
     dispatch({ type: FETCH_ORDERS, payload: res.data });
 }
+
+
+// INGREDIENTS
+export const submitIngredient = (values, history) => async dispatch => {
+    const res = await axios.post('/api/submit-ingredient', values);
+
+    history.push('/dashboard/ingredients')
+    dispatch({ type: FETCH_USER, payload: res.data });
+}
+
+// export const fetchIngredient = ingredientID => async dispatch => {
+//     const res = await axios.get(`/api/ingredient/${ingredientID}`);
+
+//     dispatch({ type: FETCH_INGREDIENT, payload: res.data });
+// }
+
+
+// export const fetchIngridients = () => async dispatch => {
+//     const res = await axios.get('/api/ingredients');
+
+//     dispatch({ type: FETCH_INGREDIENTS, payload: res.data });
+// }

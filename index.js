@@ -1,6 +1,6 @@
 const express = require('express');
 const userModel = require('./models/user');
-const surveyModel = require('./models/survey');
+const ingredientModel = require('./models/ingredient');
 const orderModel = require('./models/order');
 const globalModel = require('./models/global');
 const bodyParser = require('body-parser');
@@ -29,12 +29,12 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
 // // routes
 // auth routes
 require('./routes/authRoutes')(app)
-// survey routes
-require('./routes/surveyRoutes')(app)
 // dashboard routes
 require('./routes/dashboardRoutes')(app)
 // order routes
 require('./routes/orderRoutes')(app)
+// ingredient routes
+require('./routes/ingredientRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {

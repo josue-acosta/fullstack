@@ -11,8 +11,7 @@ import NavDrawer from './NavDrawer'
 import OrderNew from './orders/OrderNew'
 import OrderTable from './orders/OrderTable'
 import OrderView from './orders/OrderView'
-import SurveyNew from './surveys/SurveyNew'
-import SurveyList from './surveys/SurveyList'
+import IngredientNew from './foodCosts/IngredientNew'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -60,9 +59,7 @@ export default function Dashboard() {
                         <Route path='/dashboard/new-order' component={OrderNew} />
                         <Route path='/dashboard/orders' component={OrderTable} />
                         <Route path='/dashboard/order/:orderID' component={OrderView} />
-
-                        <Route path='/dashboard/new-survey' component={SurveyNew} />
-                        <Route path='/dashboard/surveys' component={SurveyList} />
+                        <Route path='/dashboard/new-ingredient' component={IngredientNew} />
                     </Grid>
                 </Container>
             </main>

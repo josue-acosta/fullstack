@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 // components
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems, secondaryListItems, quaternaryListItems } from './listItems';
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -65,6 +65,8 @@ const NavDrawer = ({ open, drawerClose }) => {
             <List>{mainListItems}</List>
             <Divider />
             <List>{secondaryListItems}</List>
+            <Divider />
+            <List>{quaternaryListItems}</List>
         </Drawer>
     );
 }

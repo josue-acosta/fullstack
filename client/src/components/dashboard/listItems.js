@@ -10,14 +10,12 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import AddIcon from '@material-ui/icons/Add';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import ReceiptIcon from '@material-ui/icons/Receipt';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import MultilineChartIcon from '@material-ui/icons/MultilineChart';
 import DescriptionIcon from '@material-ui/icons/Description';
 import ExposureIcon from '@material-ui/icons/Exposure';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import HomeIcon from '@material-ui/icons/Home';
-import AssignmentIcon from '@material-ui/icons/Assignment';
 
 
 export const mainListItems = (
@@ -27,6 +25,16 @@ export const mainListItems = (
             <ListItemText primary='Dashboard' />
         </ListItem>
 
+        <ListItem button component={NavLink} to='/'>
+            <ListItemIcon><HomeIcon /></ListItemIcon>
+            <ListItemText primary='Go home' />
+        </ListItem>
+    </div>
+);
+
+export const secondaryListItems = (
+    <div>
+        <ListSubheader inset>Cake Orders</ListSubheader>
         <ListItem button component={NavLink} to='/dashboard/new-order' >
             <ListItemIcon><AddIcon /></ListItemIcon>
             <ListItemText primary='New Order' />
@@ -41,16 +49,12 @@ export const mainListItems = (
             <ListItemIcon><ReceiptIcon /></ListItemIcon>
             <ListItemText primary='Gross Sales' />
         </ListItem>
-
-        <ListItem button component={NavLink} to='/dashboard/food-cost' >
-            <ListItemIcon><AddShoppingCartIcon /></ListItemIcon>
-            <ListItemText primary='Food Cost' />
-        </ListItem>
     </div>
 );
 
 export const terciaryListItems = (
     <div>
+        <ListSubheader inset>Saved reports</ListSubheader>
         <ListItem button component={NavLink} to='//dashboardrevenue-streams' >
             <ListItemIcon><DonutLargeIcon /></ListItemIcon>
             <ListItemText primary='Revenue Streams' />
@@ -78,22 +82,22 @@ export const terciaryListItems = (
     </div>
 )
 
-export const secondaryListItems = (
+export const quaternaryListItems = (
     <div>
-        <ListSubheader inset>Saved reports</ListSubheader>
-        <ListItem button component={NavLink} to='/'>
-            <ListItemIcon><HomeIcon /></ListItemIcon>
-            <ListItemText primary='Go home' />
+        <ListSubheader inset>Food Cost</ListSubheader>
+        <ListItem button component={NavLink} to='/dashboard/new-ingredient' >
+            <ListItemIcon><AddIcon /></ListItemIcon>
+            <ListItemText primary='New Ingredient' />
         </ListItem>
 
-        <ListItem button component={NavLink} to='/dashboard/new-survey'>
-            <ListItemIcon><AssignmentIcon /></ListItemIcon>
-            <ListItemText primary='New Survey' />
+        <ListItem button component={NavLink} to='/dashboard/ingredients' >
+            <ListItemIcon><ViewListIcon /></ListItemIcon>
+            <ListItemText primary='View Ingredients' />
         </ListItem>
 
-        <ListItem button component={NavLink} to='/dashboard/surveys'>
-            <ListItemIcon><AssignmentIcon /></ListItemIcon>
-            <ListItemText primary='View Surveys' />
+        <ListItem button component={NavLink} to='/dashboard/out-the-door-costs' >
+            <ListItemIcon><ViewListIcon /></ListItemIcon>
+            <ListItemText primary='View OTD Costs' />
         </ListItem>
     </div>
-);
+)

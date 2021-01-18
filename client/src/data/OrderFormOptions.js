@@ -114,3 +114,46 @@ export const fillings = [
         label: 'Mocha',
     }
 ]
+
+export const unitsOfMeasurement = [
+    {
+        value: 'oz',
+        label: 'oz',
+    },
+    {
+        value: 'fl oz',
+        label: 'fl oz',
+    },
+    {
+        value: 'lbs',
+        label: 'lbs',
+    },
+    {
+        value: 'g',
+        label: 'g',
+    },
+    {
+        value: 'kg',
+        label: 'kg',
+    },
+    {
+        value: 'l',
+        label: 'l',
+    },
+    {
+        value: 'ml',
+        label: 'ml',
+    },
+    {
+        value: 'ct',
+        label: 'ct',
+    },
+    {
+        value: 't',
+        label: 't',
+    },
+    {
+        value: 'T',
+        label: 'T',
+    },
+]
