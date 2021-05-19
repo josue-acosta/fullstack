@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 // components
 import HeaderBar from './HeaderBar'
@@ -42,6 +43,18 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+// const styles = theme => ({
+//     root: {
+//         flexGrow: 1,
+//     },
+//     navLink: {
+//         color: 'white',
+//         textDecoration: 'none',
+//         marginRight: '2em',
+//         // Add alignItems/justifyContent: "flex-end"
+//     }
+// });
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function HomePage() {
@@ -65,12 +78,12 @@ export default function HomePage() {
                             <Grid container spacing={2} justify='center'>
                                 <Grid item>
                                     <Button variant='contained' color='primary'>
-                                        View Menu
+                                        <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
                                     </Button>
                                 </Grid>
                                 <Grid item>
                                     <Button variant='outlined' color='primary'>
-                                        Contact Us
+                                        <NavLink to='/contact-us' className={classes.navLink} >Contact Us</NavLink>
                                     </Button>
                                 </Grid>
                             </Grid>
