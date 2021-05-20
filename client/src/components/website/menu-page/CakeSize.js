@@ -1,5 +1,7 @@
 import React from 'react';
 
+// componets
+import PriceDisclaimer from './PriceDisclaimer'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -25,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
     },
     table: {
         width: '100%'
+    },
+    spacing: {
+        marginTop: 50,
+        marginBottom: 20
     }
 }));
 
@@ -61,13 +67,15 @@ const FlavorList = () => {
 
     return (
         <>
-            <Typography variant="h5" component="h1">
+            <Typography variant="h5" component="h1" className={classes.spacing} >
                 Cake Orders
             </Typography>
 
+            <PriceDisclaimer />
+
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12}>
                         <Card className={classes.root} >
                             <CardMedia
                                 className={classes.media}
@@ -96,10 +104,6 @@ const FlavorList = () => {
                     </Grid>
                 )}
             </Grid>
-
-            <Typography variant="p">
-                The final price is based on the final design. Changes to the order after it's placed is subject to change.
-            </Typography>
         </>
     );
 }

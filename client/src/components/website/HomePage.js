@@ -40,22 +40,15 @@ const useStyles = makeStyles((theme) => ({
     },
     cardContent: {
         flexGrow: 1,
+    },
+    navLinkPrimary: {
+        color: 'white',
+        textDecoration: 'none',
+    },
+    navLinkSecondary: {
+        textDecoration: 'none',
     }
 }));
-
-// const styles = theme => ({
-//     root: {
-//         flexGrow: 1,
-//     },
-//     navLink: {
-//         color: 'white',
-//         textDecoration: 'none',
-//         marginRight: '2em',
-//         // Add alignItems/justifyContent: "flex-end"
-//     }
-// });
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function HomePage() {
     const classes = useStyles();
@@ -72,18 +65,18 @@ export default function HomePage() {
                             Mi Casa Cake Shop
                         </Typography>
                         <Typography variant='h5' align='center' color='textSecondary' paragraph>
-                            We're a Mexican Bakery with years of experience making cakes for all occasions and bread for everyday meals.
+                            We're a Mexican bakery with years of experience making cakes for all occasions.
                         </Typography>
                         <div className={classes.heroButtons}>
                             <Grid container spacing={2} justify='center'>
                                 <Grid item>
                                     <Button variant='contained' color='primary'>
-                                        <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
+                                        <NavLink to='/menu' className={classes.navLinkPrimary} >Menu</NavLink>
                                     </Button>
                                 </Grid>
                                 <Grid item>
                                     <Button variant='outlined' color='primary'>
-                                        <NavLink to='/contact-us' className={classes.navLink} >Contact Us</NavLink>
+                                        <NavLink to='/contact-us' className={classes.navLinkSecondary} >Contact Us</NavLink>
                                     </Button>
                                 </Grid>
                             </Grid>

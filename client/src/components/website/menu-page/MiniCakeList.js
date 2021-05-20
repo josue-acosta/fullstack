@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
         width: 150,
         height: 150
     },
+    spacing: {
+        marginTop: 50,
+        marginBottom: 20
+    }
 }));
 
 const FlavorList = () => {
@@ -71,7 +75,7 @@ const FlavorList = () => {
 
     return (
         <>
-            <Typography variant="h5" component="h1">
+            <Typography variant="h5" component="h1" className={classes.spacing} >
                 Mini-Cakes
             </Typography>
 

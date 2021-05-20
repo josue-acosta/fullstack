@@ -11,13 +11,15 @@ import CakeSize from './menu-page/CakeSize'
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container';
 
 
 const useStyles = makeStyles((theme) => ({
-    // 
+    heroContent: {
+        backgroundColor: theme.palette.background.paper,
+        padding: theme.spacing(8, 0, 6),
+    },
 }));
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function HomePage() {
     const classes = useStyles();
@@ -27,12 +29,16 @@ export default function HomePage() {
             <CssBaseline />
             <HeaderBar />
             <main>
-                <Typography variant="h1" component="h1">
-                    Menu
-                </Typography>
-                <FlavorList />
-                <MiniCakeList />
-                <CakeSize />
+                <div className={classes.heroContent}>
+                    <Container maxWidth='md'>
+                        <Typography variant="h1" component="h1">
+                            Menu
+                        </Typography>
+                        <FlavorList />
+                        <MiniCakeList />
+                        <CakeSize />
+                    </Container>
+                </div>
             </main>
 
             {/* Footer */}

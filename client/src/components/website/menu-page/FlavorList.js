@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
+    spacing: {
+        marginBottom: 20
+    }
 }));
 
 const FlavorList = () => {
@@ -36,7 +39,7 @@ const FlavorList = () => {
 
     return (
         <div className={classes.root}>
-            <Typography variant="h5" component="h1">
+            <Typography variant="h5" component="h1" className={classes.spacing} >
                 Cake Flavors
             </Typography>
 

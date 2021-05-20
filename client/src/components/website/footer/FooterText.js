@@ -11,7 +11,7 @@ const Footer = () => {
             </Typography>
             <Typography variant='subtitle1' align='center' color='textSecondary' component='p'>
                 <address>
-                    3306 Indianola Ave, Des Moines IA, 50315
+                    3306 Indianola Ave, Des&nbsp;Moines&nbsp;IA,&nbsp;50315
                 </address>
             </Typography>
         </>
