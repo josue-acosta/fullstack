@@ -9,19 +9,17 @@ import LoginButton from './LoginButton'
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
     root: {
         flexGrow: 1,
     },
-    title: {
-        flexGrow: 1
-    },
-    logo: {
+    navLink: {
         color: 'white',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        marginRight: '2em',
+        // Add alignItems/justifyContent: "flex-end"
     }
 });
 
@@ -44,9 +42,9 @@ class HeaderBar extends Component {
             <div className={classes.root}>
                 <AppBar position='static'>
                     <Toolbar>
-                        <Typography variant='h6' className={classes.title}>
-                            <NavLink to='/' className={classes.logo} >Mi Sistema</NavLink>
-                        </Typography>
+                        <NavLink to='/' className={classes.navLink} >Home</NavLink>
+                        <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
+                        <NavLink to='/contact-us' className={classes.navLink} >Contact Us</NavLink>
                         {this.renderContent()}
                         <LoginButton auth={this.props.auth} />
                     </Toolbar>
