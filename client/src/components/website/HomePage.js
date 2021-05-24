@@ -76,7 +76,7 @@ export default function HomePage() {
                                 </Grid>
                                 <Grid item>
                                     <Button variant='outlined' color='primary'>
-                                        <NavLink to='/contact-us' className={classes.navLinkSecondary} >Contact Us</NavLink>
+                                        <NavLink to='/cake-order-form' className={classes.navLinkSecondary} >Order a Cake</NavLink>
                                     </Button>
                                 </Grid>
                             </Grid>

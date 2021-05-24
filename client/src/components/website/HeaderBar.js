@@ -19,7 +19,6 @@ const styles = theme => ({
         color: 'white',
         textDecoration: 'none',
         marginRight: '2em',
-        // Add alignItems/justifyContent: "flex-end"
     }
 });
 
@@ -44,7 +43,7 @@ class HeaderBar extends Component {
                     <Toolbar>
                         <NavLink to='/' className={classes.navLink} >Home</NavLink>
                         <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
-                        <NavLink to='/contact-us' className={classes.navLink} >Contact Us</NavLink>
+                        <NavLink to='/cake-order-form' className={classes.navLink} >Cake Order Form</NavLink>
                         {this.renderContent()}
                         <LoginButton auth={this.props.auth} />
                     </Toolbar>

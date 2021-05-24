@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function HomePage() {
+export default function MenuPage() {
     const classes = useStyles();
 
     return (
