@@ -36,6 +36,13 @@ export const submitOrder = (values, history) => async dispatch => {
     dispatch({ type: FETCH_USER, payload: res.data });
 }
 
+// PUBLIC ORDERS
+export const submitPublicOrder = (values, history) => async dispatch => {
+    const res = await axios.post('/api/submit-public-order', values);
+
+    history.push('/')
+    dispatch({ type: FETCH_USER, payload: res.data });
+}
 
 export const fetchOrder = orderID => async dispatch => {
     const res = await axios.get(`/api/order/${orderID}`);

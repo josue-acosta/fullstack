@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     }
 });
 
-const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitOrder, history }) => {
+const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, history }) => {
     const classes = useStyles();
 
     return (
@@ -161,7 +161,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitOrder, history
                     <Button
                         variant='contained'
                         color='primary'
-                        onClick={() => submitOrder(formValues, history)}
+                        onClick={() => submitPublicOrder(formValues, history)}
                     >
                         Save
                     </Button>

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
-const requireLogin = require('../middlewares/requireLogin')
 const keys = require('../config/keys');
 
-const PublicOrder = mongoose.model('publicOrders')
+// const PublicOrder = mongoose.model('publicOrders')
+const Order = mongoose.model('orders')
 const Global = mongoose.model('global')
 
 module.exports = app => {
@@ -29,7 +29,7 @@ module.exports = app => {
             celebratedText
         } = req.body;
 
-        const order = new PublicOrder({
+        const order = new Order({
             orderNumber: count,
             name,
             phoneNumber,
