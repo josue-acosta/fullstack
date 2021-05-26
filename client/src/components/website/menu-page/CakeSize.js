@@ -1,7 +1,7 @@
 import React from 'react';
 
 // componets
-import PriceDisclaimer from './PriceDisclaimer'
+import Description from './Description'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -71,7 +71,7 @@ const FlavorList = () => {
                 Cake Orders
             </Typography>
 
-            <PriceDisclaimer />
+            <Description description="The final price of the cake is based on the final design. The price is subject to change if changes are made after the order is placed." />
 
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>

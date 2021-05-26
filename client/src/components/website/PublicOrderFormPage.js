@@ -10,6 +10,7 @@ import PublicOrderFormReview from './public-order-form-page/PublicOrderFormRevie
 // styles
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container';
 
 const styles = theme => ({
@@ -40,7 +41,9 @@ class PublicOrderFormPage extends Component {
                 <main>
                     <div className={classes.heroContent}>
                         <Container maxWidth='md'>
-                            <h1>Cake Order Form</h1>
+                            <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
+                                Cake Order Form
+                            </Typography>
                             {
                                 this.state.showFormReview ?
                                     <PublicOrderFormReview onOrderSubmit={this.handleOnOrderSubmit} /> :

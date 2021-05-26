@@ -1,5 +1,8 @@
 import React from 'react';
 
+// componets
+import Description from './Description'
+
 // styles
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography'
@@ -12,8 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        textAlign: 'center'
     },
     spacing: {
         marginBottom: 20
@@ -42,6 +44,8 @@ const FlavorList = () => {
             <Typography variant="h5" component="h1" className={classes.spacing} >
                 Cake Flavors
             </Typography>
+
+            <Description description="These are the flavors we can make any cake from." />
 
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>

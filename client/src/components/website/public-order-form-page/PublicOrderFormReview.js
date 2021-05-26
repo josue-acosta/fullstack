@@ -13,6 +13,7 @@ import FormDatePicker from '../../formFields/FormDatePicker'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -33,6 +34,10 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
 
     return (
         <Grid container justify="center" >
+            <Typography variant='h5' align='center' color='textSecondary' paragraph>
+                Please review your order
+            </Typography>
+
             <Card className={classes.root}>
                 <CardContent>
                     <Grid container spacing={3}>

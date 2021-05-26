@@ -1,5 +1,7 @@
 import React from 'react';
 
+// componets
+import Description from './Description'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -78,6 +80,8 @@ const FlavorList = () => {
             <Typography variant="h5" component="h1" className={classes.spacing} >
                 Mini-Cakes
             </Typography>
+
+            <Description description="Something, somthing, we have these cakes all day every day" />
 
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>

@@ -19,17 +19,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const FlavorList = () => {
+const Description = (props) => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Grid item xs={12} className={classes.spacing}>
                 <Paper className={classes.paper}>
-                    The final price of the cake is based on the final design. The price is subject to change if changes are made after the order is placed.
+                    {props.description}
                 </Paper>
             </Grid>
         </div>
     );
 }
 
-export default FlavorList;
+export default Description;

@@ -19,6 +19,9 @@ const styles = theme => ({
         color: 'white',
         textDecoration: 'none',
         marginRight: '2em',
+    },
+    title: {
+        flexGrow: 1,
     }
 });
 
@@ -41,11 +44,13 @@ class HeaderBar extends Component {
             <div className={classes.root}>
                 <AppBar position='static'>
                     <Toolbar>
+                        <div className={classes.title}>
+                            {this.renderContent()}
+                            <LoginButton auth={this.props.auth} />
+                        </div>
                         <NavLink to='/' className={classes.navLink} >Home</NavLink>
                         <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
                         <NavLink to='/cake-order-form' className={classes.navLink} >Cake Order Form</NavLink>
-                        {this.renderContent()}
-                        <LoginButton auth={this.props.auth} />
                     </Toolbar>
                 </AppBar>
             </div>

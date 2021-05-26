@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 
-
 // data
 import { servings, flavors, fillings } from '../../../data/OrderFormOptions'
 
