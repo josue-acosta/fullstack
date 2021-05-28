@@ -1,5 +1,8 @@
 import React from 'react';
 
+// componets
+import Description from './Description'
+
 // styles
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography'
@@ -12,8 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        textAlign: 'center'
     },
     spacing: {
         marginBottom: 20
@@ -33,8 +35,11 @@ const FlavorList = () => {
         'Vanilla',
         'Pecan',
         'Piña Colada',
+        'Pineapple',
         'Coconut',
-        'Lemon'
+        'Lemon',
+        'Almond',
+        'Orange'
     ];
 
     return (
@@ -42,6 +47,8 @@ const FlavorList = () => {
             <Typography variant="h5" component="h1" className={classes.spacing} >
                 Cake Flavors
             </Typography>
+
+            <Description description="We are offer a variety of flavors. And what's even better, you don't have to chose just one. Combine any two flavors to make your cake extra&nbsp;personalized." />
 
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>

@@ -12,14 +12,6 @@ export const sizes = [
         label: '12"',
     },
     {
-        value: '14',
-        label: '14"',
-    },
-    {
-        value: '16',
-        label: '16"',
-    },
-    {
         value: 'Half Sheet',
         label: 'Half Sheet',
     },
@@ -29,88 +21,131 @@ export const sizes = [
     }
 ]
 
+export const servings = [
+    {
+        value: '8',
+        label: '12-15 Servings',
+    },
+    {
+        value: '10',
+        label: '20-25 Servings',
+    },
+    {
+        value: '12',
+        label: '30-35 Servings',
+    },
+    {
+        value: 'Half Sheet',
+        label: '50-55 Servings',
+    },
+    {
+        value: 'Full Sheet',
+        label: '70-75 Servings',
+    }
+]
+
 export const flavors = [
     {
-        value: 'Vanilla',
-        label: 'Vanilla',
+        value: 'Red Velvet',
+        label: 'Red Velvet',
+    },
+    {
+        value: '3 Leches',
+        label: '3 Leches',
+    },
+    {
+        value: 'Strawberry',
+        label: 'Strawberry',
+    },
+    {
+        value: 'Chocolate Raspberry',
+        label: 'Chocolate Raspberry',
+    },
+    {
+        value: 'Champange',
+        label: 'Champange',
     },
     {
         value: 'Chocolate',
         label: 'Chocolate',
     },
     {
-        value: 'Fresa',
-        label: 'Fresa',
+        value: 'Vanilla',
+        label: 'Vanilla',
     },
     {
-        value: 'Piña',
-        label: 'Piña',
-    },
-    {
-        value: 'Nuez',
-        label: 'Nuez',
-    },
-    {
-        value: 'Almendra',
-        label: 'Almendra',
+        value: 'Pecan',
+        label: 'Pecan',
     },
     {
         value: 'Piña Colada',
         label: 'Piña Colada',
     },
     {
-        value: 'Coco',
-        label: 'Coco',
+        value: 'Pineapple',
+        label: 'Pineapple',
     },
     {
-        value: 'Choco Flan',
-        label: 'Choco Flan',
+        value: 'Coconut',
+        label: 'Coconut',
     },
     {
-        value: 'Tres Leches',
-        label: 'Tres Leches',
+        value: 'Lemon',
+        label: 'Lemon',
     },
     {
-        value: 'Mocha',
-        label: 'Mocha',
+        value: 'Almond',
+        label: 'Almond',
+    },
+    {
+        value: 'Orange',
+        label: 'Orange',
     }
 ]
 
 export const fillings = [
     {
-        value: 'Vanilla',
-        label: 'Vanilla',
+        value: 'Strawberry',
+        label: 'Strawberry',
     },
     {
         value: 'Chocolate',
         label: 'Chocolate',
     },
     {
-        value: 'Fresa',
-        label: 'Fresa',
+        value: 'Mocha',
+        label: 'Mocha',
     },
     {
-        value: 'Piña',
-        label: 'Piña',
+        value: 'Vanilla',
+        label: 'Vanilla',
     },
     {
-        value: 'Nuez',
-        label: 'Nuez',
-    },
-    {
-        value: 'Almendra',
-        label: 'Almendra',
+        value: 'Pecan',
+        label: 'Pecan',
     },
     {
         value: 'Piña Colada',
         label: 'Piña Colada',
     },
     {
-        value: 'Coco',
-        label: 'Coco',
+        value: 'Pineapple',
+        label: 'Pineapple',
     },
     {
-        value: 'Mocha',
-        label: 'Mocha',
+        value: 'Coconut',
+        label: 'Coconut',
+    },
+    {
+        value: 'Lemon',
+        label: 'Lemon',
+    },
+    {
+        value: 'Almond',
+        label: 'Almond',
+    },
+    {
+        value: 'Orange',
+        label: 'Orange',
     }
 ]

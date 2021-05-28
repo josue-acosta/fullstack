@@ -6,7 +6,7 @@ import * as actions from '../actions'
 // components
 import HomePage from './website/HomePage'
 import MenuPage from './website/MenuPage'
-import ContactUsPage from './website/ContactUsPage'
+import PublicOrderFormPage from './website/PublicOrderFormPage'
 import DashboardPage from './dashboard/DashboardPage'
 
 
@@ -21,7 +21,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path='/' component={HomePage} />
                     <Route exact path='/menu' component={MenuPage} />
-                    <Route exact path='/contact-us' component={ContactUsPage} />
+                    <Route exact path='/cake-order-form' component={PublicOrderFormPage} />
                     <Route path='/dashboard' component={DashboardPage} />
                 </Switch>
             </BrowserRouter>

@@ -2,6 +2,7 @@ const express = require('express');
 const userModel = require('./models/user');
 const surveyModel = require('./models/survey');
 const orderModel = require('./models/order');
+const publicOrderModel = require('./models/publicOrder');
 const globalModel = require('./models/global');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
@@ -25,6 +26,8 @@ app.use(passport.session());
 
 // database configuration
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+    .then(() => console.log('Database Connected'))
+    .catch(err => console.log(err));
 
 // // routes
 // auth routes
@@ -35,6 +38,8 @@ require('./routes/surveyRoutes')(app)
 require('./routes/dashboardRoutes')(app)
 // order routes
 require('./routes/orderRoutes')(app)
+// public order routes
+require('./routes/publicOrderRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {

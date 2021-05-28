@@ -1,7 +1,14 @@
 import React from 'react';
 
 // componets
-import PriceDisclaimer from './PriceDisclaimer'
+import Description from './Description'
+
+// images
+import eightInchCake from '../../../images/8-inch-cake.jpg'
+import tenInchCake from '../../../images/10-inch-cake.jpg'
+import twelveInchCake from '../../../images/12-inch-cake.jpg'
+import halfSheetCake from '../../../images/half-sheet-cake.jpg'
+import fullSheetCake from '../../../images/full-sheet-cake.jpg'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -22,8 +29,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     media: {
-        width: 150,
-        height: 150
+        width: 200
     },
     table: {
         width: '100%'
@@ -41,27 +47,32 @@ const FlavorList = () => {
         {
             size: '8"',
             servings: 15,
-            price: '$31'
+            price: '$31',
+            img: eightInchCake
         },
         {
             size: '10"',
             servings: 25,
-            price: '$43'
+            price: '$43',
+            img: tenInchCake
         },
         {
             size: '12"',
             servings: 35,
-            price: '$57'
+            price: '$57',
+            img: twelveInchCake
         },
         {
             size: 'Half Sheet',
             servings: 55,
-            price: '$80'
+            price: '$80',
+            img: halfSheetCake
         },
         {
             size: 'Full Sheet',
             servings: 70,
-            price: '$100'
+            price: '$100',
+            img: fullSheetCake
         },
     ];
 
@@ -71,7 +82,7 @@ const FlavorList = () => {
                 Cake Orders
             </Typography>
 
-            <PriceDisclaimer />
+            <Description description="We love a good challenge but please allow a 2 day notice. We may be able to accommodate your order in 1 day or overnight on some occasions. The prices lested below are the starting price. The final price of the cake is based on the final design. And is subject to change if changes are made after the order is placed." />
 
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>
@@ -79,7 +90,7 @@ const FlavorList = () => {
                         <Card className={classes.root} >
                             <CardMedia
                                 className={classes.media}
-                                image="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-210210-mini-chocolate-cake-001-ab-1613155622.jpg"
+                                image={flavor.img}
                                 title="Contemplative Reptile"
                             />
                             <CardContent className={classes.table}>
