@@ -9,19 +9,19 @@ import LoginButton from './LoginButton'
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
     root: {
         flexGrow: 1,
     },
-    title: {
-        flexGrow: 1
-    },
-    logo: {
+    navLink: {
         color: 'white',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        marginRight: '2em',
+    },
+    title: {
+        flexGrow: 1,
     }
 });
 
@@ -44,11 +44,13 @@ class HeaderBar extends Component {
             <div className={classes.root}>
                 <AppBar position='static'>
                     <Toolbar>
-                        <Typography variant='h6' className={classes.title}>
-                            <NavLink to='/' className={classes.logo} >Mi Sistema</NavLink>
-                        </Typography>
-                        {this.renderContent()}
-                        <LoginButton auth={this.props.auth} />
+                        <div className={classes.title}>
+                            {this.renderContent()}
+                            <LoginButton auth={this.props.auth} />
+                        </div>
+                        <NavLink to='/' className={classes.navLink} >Home</NavLink>
+                        <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
+                        <NavLink to='/cake-order-form' className={classes.navLink} >Cake Order Form</NavLink>
                     </Toolbar>
                 </AppBar>
             </div>

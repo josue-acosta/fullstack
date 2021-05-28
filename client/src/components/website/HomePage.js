@@ -1,16 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 
 // components
 import HeaderBar from './HeaderBar'
-import Copyright from './Copyright'
+import FooterBar from './footer/FooterBar'
+import ImageGrid from './home-page/ImageGrid'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -43,13 +41,14 @@ const useStyles = makeStyles((theme) => ({
     cardContent: {
         flexGrow: 1,
     },
-    footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(6),
+    navLinkPrimary: {
+        color: 'white',
+        textDecoration: 'none',
     },
+    navLinkSecondary: {
+        textDecoration: 'none',
+    }
 }));
-
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export default function HomePage() {
     const classes = useStyles();
@@ -63,23 +62,21 @@ export default function HomePage() {
                 <div className={classes.heroContent}>
                     <Container maxWidth='sm'>
                         <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
-                            Album layout
+                            Mi Casa Cake Shop
                         </Typography>
                         <Typography variant='h5' align='center' color='textSecondary' paragraph>
-                            Something short and leading about the collection below—its contents, the creator, etc.
-                            Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                            entirely.
+                            We're a Mexican bakery with years of experience making cakes for all occasions.
                         </Typography>
                         <div className={classes.heroButtons}>
                             <Grid container spacing={2} justify='center'>
                                 <Grid item>
                                     <Button variant='contained' color='primary'>
-                                        Main call to action
+                                        <NavLink to='/menu' className={classes.navLinkPrimary} >Menu</NavLink>
                                     </Button>
                                 </Grid>
                                 <Grid item>
                                     <Button variant='outlined' color='primary'>
-                                        Secondary action
+                                        <NavLink to='/cake-order-form' className={classes.navLinkSecondary} >Order a Cake</NavLink>
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -88,52 +85,16 @@ export default function HomePage() {
                 </div>
                 {/* End Hero */}
 
-                {/* Cards */}
+                {/* ImageGrid */}
                 <Container className={classes.cardGrid} maxWidth='md'>
-                    <Grid container spacing={4}>
-                        {cards.map((card) => (
-                            <Grid item key={card} xs={12} sm={6} md={4}>
-                                <Card className={classes.card}>
-                                    <CardMedia
-                                        className={classes.cardMedia}
-                                        image='https://source.unsplash.com/random'
-                                        title='Image title'
-                                    />
-                                    <CardContent className={classes.cardContent}>
-                                        <Typography gutterBottom variant='h5' component='h2'>
-                                            Heading
-                                        </Typography>
-                                        <Typography>
-                                            This is a media card. You can use this section to describe the content.
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions>
-                                        <Button size='small' color='primary'>
-                                            View
-                                        </Button>
-                                        <Button size='small' color='primary'>
-                                            Edit
-                                        </Button>
-                                    </CardActions>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
+                    <ImageGrid />
                 </Container>
-                {/* End Cards */}
+                {/* End ImageGrid */}
             </main>
 
             {/* Footer */}
-            <footer className={classes.footer}>
-                <Typography variant='h6' align='center' gutterBottom>
-                    Footer
-                </Typography>
-                <Typography variant='subtitle1' align='center' color='textSecondary' component='p'>
-                    Something here to give the footer a purpose!
-                </Typography>
-                <Copyright />
-            </footer>
+            <FooterBar />
             {/* End footer */}
-        </React.Fragment>
+        </React.Fragment >
     );
 }
