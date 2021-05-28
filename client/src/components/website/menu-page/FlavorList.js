@@ -35,8 +35,11 @@ const FlavorList = () => {
         'Vanilla',
         'Pecan',
         'Piña Colada',
+        'Pineapple',
         'Coconut',
-        'Lemon'
+        'Lemon',
+        'Almond',
+        'Orange'
     ];
 
     return (
@@ -45,7 +48,7 @@ const FlavorList = () => {
                 Cake Flavors
             </Typography>
 
-            <Description description="These are the flavors we can make any cake from." />
+            <Description description="We are offer a variety of flavors. And what's even better, you don't have to chose just one. Combine any two flavors to make your cake extra&nbsp;personalized." />
 
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>

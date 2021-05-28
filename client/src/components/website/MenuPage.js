@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(8, 0, 6),
     },
+    marginTop: {
+        marginTop: '4rem'
+    }
 }));
 
 export default function MenuPage() {
@@ -34,9 +37,18 @@ export default function MenuPage() {
                         <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
                             Menu
                         </Typography>
-                        <FlavorList />
+
+                        <Typography variant='h3' align='center' color='textSecondary' paragraph >
+                            In-store Pickup
+                        </Typography>
                         <MiniCakeList />
+
+                        <Typography variant='h3' align='center' color='textSecondary' paragraph className={classes.marginTop}>
+                            Custom Cakes
+                        </Typography>
+                        <FlavorList />
                         <CakeSize />
+
                     </Container>
                 </div>
             </main>

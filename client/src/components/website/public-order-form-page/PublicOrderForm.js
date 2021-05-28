@@ -136,7 +136,7 @@ class PublicOrderForm extends Component {
                             <Button
                                 color='primary'
                                 component={Link}
-                                to='/dashboard'>
+                                to='/'>
                                 Cancel
                                 </Button>
 

@@ -26,6 +26,8 @@ app.use(passport.session());
 
 // database configuration
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+    .then(() => console.log('Database Connected'))
+    .catch(err => console.log(err));
 
 // // routes
 // auth routes

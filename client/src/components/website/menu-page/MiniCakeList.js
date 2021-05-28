@@ -3,6 +3,15 @@ import React from 'react';
 // componets
 import Description from './Description'
 
+// images
+import tresLeches from '../../../images/mini-cakes-photos/mini-cake-tres-leches.jpg'
+import strawberry from '../../../images/mini-cakes-photos/mini-cake-strawberry.jpg'
+import chocolateRaspberry from '../../../images/mini-cakes-photos/mini-cake-chocolate-raspberry.jpg'
+import champange from '../../../images/mini-cakes-photos/mini-cake-champange.jpg'
+import pecan from '../../../images/mini-cakes-photos/mini-cake-pecan.jpg'
+import coconut from '../../../images/mini-cakes-photos/mini-cake-coconut.jpg'
+import lemon from '../../../images/mini-cakes-photos/mini-cake-lemon.jpg'
+
 // styles
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography'
@@ -30,24 +39,28 @@ const FlavorList = () => {
 
     const flavors = [
         {
-            name: '3 Leches',
-            price: '$3.50'
-        },
-        {
             name: 'Red Velvet',
             price: '$3.75'
         },
         {
+            name: '3 Leches',
+            price: '$3.50',
+            img: tresLeches
+        },
+        {
             name: 'Strawberry',
-            price: '$3.50'
+            price: '$3.50',
+            img: strawberry
         },
         {
             name: 'Chocolate Raspberry',
-            price: '$3.50'
+            price: '$3.50',
+            img: chocolateRaspberry
         },
         {
             name: 'Champagne',
-            price: '$3.75'
+            price: '$3.75',
+            img: champange
         },
         {
             name: 'Chocolate',
@@ -59,7 +72,8 @@ const FlavorList = () => {
         },
         {
             name: 'Pecan',
-            price: '$3.50'
+            price: '$3.50',
+            img: pecan
         },
         {
             name: 'Piña Colada',
@@ -67,11 +81,13 @@ const FlavorList = () => {
         },
         {
             name: 'Coconut',
-            price: '$3.50'
+            price: '$3.50',
+            img: coconut
         },
         {
             name: 'Lemon',
-            price: '$3.50'
+            price: '$3.50',
+            img: lemon
         },
     ];
 
@@ -81,7 +97,7 @@ const FlavorList = () => {
                 Mini-Cakes
             </Typography>
 
-            <Description description="Something, somthing, we have these cakes all day every day" />
+            <Description description="A personal cake can make an ordinay occasion feel extra special. Pick any one of our 11 flavor we carry every day." />
 
             <Grid container spacing={3}>
                 {flavors.map((flavor) =>
@@ -89,7 +105,7 @@ const FlavorList = () => {
                         <Card className={classes.root} >
                             <CardMedia
                                 className={classes.media}
-                                image="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-210210-mini-chocolate-cake-001-ab-1613155622.jpg"
+                                image={flavor.img}
                                 title="Contemplative Reptile"
                             />
                             <CardContent>
