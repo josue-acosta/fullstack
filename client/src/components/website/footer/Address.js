@@ -6,9 +6,6 @@ import Typography from '@material-ui/core/Typography'
 const Footer = () => {
     return (
         <>
-            <Typography variant='h6' align='center' gutterBottom>
-                Come Visit Us!
-            </Typography>
             <Typography variant='subtitle1' align='center' color='textSecondary' component='p'>
                 <address>
                     3306 Indianola Ave, Des&nbsp;Moines&nbsp;IA,&nbsp;50315
