@@ -37,7 +37,7 @@ class PublicOrderForm extends Component {
                     <form onSubmit={this.props.handleSubmit(this.props.onOrderSubmit)} >
                         <CardContent>
                             <Grid container spacing={3}>
-                                <Grid item xs={6}>
+                                <Grid item xs={12} sm={6}>
                                     <Field
                                         name='name'
                                         label='Name'
@@ -46,7 +46,7 @@ class PublicOrderForm extends Component {
                                     />
                                 </Grid>
 
-                                <Grid item xs={6}>
+                                <Grid item xs={12} sm={6}>
                                     <Field
                                         name='phoneNumber'
                                         label='Phone Number'
@@ -60,11 +60,12 @@ class PublicOrderForm extends Component {
                                         name='dateTime'
                                         label='Date &amp; Time'
                                         component={FormDatePicker}
+                                        helperText="What day and time do you want to pick up the cake?"
                                         fullWidth
                                     />
                                 </Grid>
 
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={4}>
                                     <Field
                                         name='cakeSize'
                                         label='Serving Size'
@@ -74,7 +75,7 @@ class PublicOrderForm extends Component {
                                     />
                                 </Grid>
 
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={4}>
                                     <Field
                                         name='flavor1'
                                         label='Flavor 1'
@@ -93,7 +94,7 @@ class PublicOrderForm extends Component {
                                     />
                                 </Grid>
 
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={4}>
                                     <Field
                                         name='filling'
                                         label='Filling'
@@ -103,29 +104,32 @@ class PublicOrderForm extends Component {
                                     />
                                 </Grid>
 
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={4}>
                                     <Field
                                         name='celebratedName'
                                         label='Celebrated Name'
                                         component={FormTextField}
+                                        helperText="What's the name of the person you're celebrating"
                                         fullWidth
                                     />
                                 </Grid>
 
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={4}>
                                     <Field
                                         name='celebratedAge'
                                         label='Celebrated Age'
                                         component={FormTextField}
+                                        helperText="How old are they?"
                                         fullWidth
                                     />
                                 </Grid>
 
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={4}>
                                     <Field
                                         name='celebratedText'
                                         label='Celebrated Text'
                                         component={FormTextField}
+                                        helperText="What should we write on the cake?"
                                         fullWidth
                                     />
                                 </Grid>

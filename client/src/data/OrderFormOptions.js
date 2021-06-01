@@ -24,23 +24,23 @@ export const sizes = [
 export const servings = [
     {
         value: '8',
-        label: '12-15 Servings',
+        label: '8" -- 12-15 Servings',
     },
     {
         value: '10',
-        label: '20-25 Servings',
+        label: '10" -- 20-25 Servings',
     },
     {
         value: '12',
-        label: '30-35 Servings',
+        label: '12" -- 30-35 Servings',
     },
     {
         value: 'Half Sheet',
-        label: '50-55 Servings',
+        label: 'Half Sheet -- 50-55 Servings',
     },
     {
         value: 'Full Sheet',
-        label: '70-75 Servings',
+        label: 'Full Sheet -- 70-75 Servings',
     }
 ]
 
