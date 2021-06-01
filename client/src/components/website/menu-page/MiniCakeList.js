@@ -4,10 +4,14 @@ import React from 'react';
 import Description from './Description'
 
 // images
+import redVelvet from '../../../images/mini-cakes-photos/mini-cake-red-velvet.jpg'
 import tresLeches from '../../../images/mini-cakes-photos/mini-cake-tres-leches.jpg'
 import strawberry from '../../../images/mini-cakes-photos/mini-cake-strawberry.jpg'
 import chocolateRaspberry from '../../../images/mini-cakes-photos/mini-cake-chocolate-raspberry.jpg'
 import champange from '../../../images/mini-cakes-photos/mini-cake-champange.jpg'
+import vanilla from '../../../images/mini-cakes-photos/mini-cake-vanilla.jpg'
+import chocolate from '../../../images/mini-cakes-photos/mini-cake-chocolate.jpg'
+import pinaColada from '../../../images/mini-cakes-photos/mini-cake-pina-colada.jpg'
 import pecan from '../../../images/mini-cakes-photos/mini-cake-pecan.jpg'
 import coconut from '../../../images/mini-cakes-photos/mini-cake-coconut.jpg'
 import lemon from '../../../images/mini-cakes-photos/mini-cake-lemon.jpg'
@@ -40,54 +44,69 @@ const FlavorList = () => {
     const flavors = [
         {
             name: 'Red Velvet',
-            price: '$3.75'
+            price: '$4.50',
+            img: redVelvet,
+            title: 'Red Velvet Mini Cake'
         },
         {
             name: '3 Leches',
-            price: '$3.50',
-            img: tresLeches
+            price: '$4.25',
+            img: tresLeches,
+            title: 'Tres Leches Mini Cake'
         },
         {
             name: 'Strawberry',
-            price: '$3.50',
-            img: strawberry
+            price: '$4.25',
+            img: strawberry,
+            title: 'Strawberry Mini Cake'
         },
         {
             name: 'Chocolate Raspberry',
-            price: '$3.50',
-            img: chocolateRaspberry
+            price: '$4.25',
+            img: chocolateRaspberry,
+            title: 'Chocolate Mini Cake'
         },
         {
             name: 'Champagne',
-            price: '$3.75',
-            img: champange
+            price: '$4.50',
+            img: champange,
+            title: 'Champange Mini Cake'
         },
         {
             name: 'Chocolate',
-            price: '$3.50'
+            price: '$4.25',
+            img: chocolate,
+            title: 'Chocolate Mini Cake'
         },
         {
             name: 'Vanilla',
-            price: '$3.50'
+            price: '$4.25',
+            img: vanilla,
+            title: 'Vanilla Mini Cake'
         },
         {
             name: 'Pecan',
-            price: '$3.50',
-            img: pecan
+            price: '$4.25',
+            img: pecan,
+            title: 'Pecan Mini Cake'
         },
         {
             name: 'Piña Colada',
-            price: '$3.50'
+            price: '$4.25',
+            img: pinaColada,
+            title: 'Pina Colada Mini Cake'
         },
         {
             name: 'Coconut',
-            price: '$3.50',
-            img: coconut
+            price: '$4.25',
+            img: coconut,
+            title: 'Coconut Mini Cake'
         },
         {
             name: 'Lemon',
-            price: '$3.50',
-            img: lemon
+            price: '$4.25',
+            img: lemon,
+            title: 'Lemon Mini Cake'
         },
     ];
 
@@ -104,15 +123,17 @@ const FlavorList = () => {
                     <Grid item xs={12} sm={6}>
                         <Card className={classes.root} >
                             <CardMedia
+                                component='img'
                                 className={classes.media}
                                 image={flavor.img}
-                                title="Contemplative Reptile"
+                                title={flavor.title}
                             />
                             <CardContent>
                                 <Typography variant="h5">
                                     {flavor.name}
                                 </Typography>
-                                {flavor.price}
+                                {flavor.price}<br />
+                                Serves 1
                             </CardContent>
                         </Card>
                     </Grid>

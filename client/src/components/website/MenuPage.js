@@ -6,6 +6,7 @@ import FooterBar from './footer/FooterBar'
 import FlavorList from './menu-page/FlavorList'
 import MiniCakeList from './menu-page/MiniCakeList'
 import CakeSize from './menu-page/CakeSize'
+import ReadyToOrder from './menu-page/ReadyToOrder'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,6 +49,7 @@ export default function MenuPage() {
                         </Typography>
                         <FlavorList />
                         <CakeSize />
+                        <ReadyToOrder />
 
                     </Container>
                 </div>

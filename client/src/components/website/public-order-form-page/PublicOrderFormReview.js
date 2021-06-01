@@ -41,7 +41,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
             <Card className={classes.root}>
                 <CardContent>
                     <Grid container spacing={3}>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6}>
                             <Field
                                 name='name'
                                 label='Name'
@@ -52,7 +52,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
                             />
                         </Grid>
 
-                        <Grid item xs={6}>
+                        <Grid item xs={12} sm={6}>
                             <Field
                                 name='phoneNumber'
                                 label='Phone Number'
@@ -74,7 +74,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
                             />
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Field
                                 name='cakeSize'
                                 label='Serving Size'
@@ -86,7 +86,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
                             />
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Field
                                 name='flavor1'
                                 label='Flavor 1'
@@ -109,7 +109,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
                             />
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Field
                                 name='filling'
                                 label='Filling'
@@ -121,7 +121,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
                             />
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Field
                                 name='celebratedName'
                                 label='Celebrated Name'
@@ -132,7 +132,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
                             />
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Field
                                 name='celebratedAge'
                                 label='Celebrated Age'
@@ -143,7 +143,7 @@ const PublicOrderFormReview = ({ onOrderSubmit, formValues, submitPublicOrder, h
                             />
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={4}>
                             <Field
                                 name='celebratedText'
                                 label='Celebrated Text'

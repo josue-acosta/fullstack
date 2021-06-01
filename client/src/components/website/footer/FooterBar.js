@@ -1,11 +1,13 @@
 import React from 'react';
 
 // components
+import Hours from './Hours'
 import Copyright from './Copyright'
-import Footer from './FooterText'
+import Address from './Address'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -19,7 +21,11 @@ const FooterBar = () => {
 
     return (
         <footer className={classes.footer}>
-            <Footer />
+            <Typography variant='h6' align='center' gutterBottom>
+                Come Visit Us!
+            </Typography>
+            <Hours />
+            <Address />
             <Copyright />
         </footer>
     );
