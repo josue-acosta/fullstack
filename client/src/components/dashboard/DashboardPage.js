@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 // components
 import Layout from './Layout'
-import DashboardSkel from '../skeletons/DashboardSkel'
 
 // styles
 import { withStyles } from '@material-ui/core/styles';
@@ -19,8 +18,6 @@ const styles = theme => ({
 class DashboardPage extends Component {
     renderContent() {
         switch (this.props.auth) {
-            case null:
-                return <DashboardSkel />;
             case false:
                 return <Typography variant='h2'>Not Authorized</Typography>
             default:
