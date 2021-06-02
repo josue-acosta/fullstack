@@ -1,6 +1,5 @@
 const express = require('express');
 const userModel = require('./models/user');
-const surveyModel = require('./models/survey');
 const orderModel = require('./models/order');
 const publicOrderModel = require('./models/publicOrder');
 const globalModel = require('./models/global');
@@ -32,8 +31,6 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
 // // routes
 // auth routes
 require('./routes/authRoutes')(app)
-// survey routes
-require('./routes/surveyRoutes')(app)
 // dashboard routes
 require('./routes/dashboardRoutes')(app)
 // order routes

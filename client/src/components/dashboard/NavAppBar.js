@@ -61,7 +61,7 @@ const NavAppBar = ({ open, drawerOpen }) => {
                     <MenuIcon />
                 </IconButton>
                 <Typography component='h1' variant='h6' color='inherit' noWrap className={classes.title}>
-                    Dashboard
+                    Mi Systema
                 </Typography>
                 <LoginButton auth={true} />
             </Toolbar>
