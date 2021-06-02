@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-// components
-import LoginButton from './LoginButton'
-
 // styles
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -46,7 +43,6 @@ class HeaderBar extends Component {
                     <Toolbar>
                         <div className={classes.title}>
                             {this.renderContent()}
-                            <LoginButton auth={this.props.auth} />
                         </div>
                         <NavLink to='/' className={classes.navLink} >Home</NavLink>
                         <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
