@@ -63,7 +63,7 @@ const FlavorList = () => {
             size: '10"',
             servings: '20-25 Servings',
             price: '$43',
-            tresLechesPrice: '$34',
+            tresLechesPrice: '$48',
             img: tenInchCake,
             title: 'Ten inch cake'
         },
@@ -71,7 +71,7 @@ const FlavorList = () => {
             size: '12"',
             servings: '30-35 Servings',
             price: '$57',
-            tresLechesPrice: '$34',
+            tresLechesPrice: '$61',
             img: twelveInchCake,
             title: 'Twelve inch cake'
         },
@@ -79,7 +79,7 @@ const FlavorList = () => {
             size: 'Half Sheet',
             servings: '50-55 Servings',
             price: '$80',
-            tresLechesPrice: '$34',
+            tresLechesPrice: '$96',
             img: halfSheetCake,
             title: 'Half sheet cake'
         },
@@ -87,7 +87,7 @@ const FlavorList = () => {
             size: 'Full Sheet',
             servings: '70-75 Servings',
             price: '$100',
-            tresLechesPrice: '$34',
+            tresLechesPrice: '$135',
             img: fullSheetCake,
             title: 'Full sheet cake'
         },
