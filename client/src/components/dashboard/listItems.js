@@ -7,6 +7,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import AddIcon from '@material-ui/icons/Add';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -18,6 +19,11 @@ export const mainListItems = (
         <ListItem button component={NavLink} to='/dashboard'>
             <ListItemIcon><DashboardIcon /></ListItemIcon>
             <ListItemText primary='Dashboard' />
+        </ListItem>
+
+        <ListItem button component={NavLink} to='/dashboard/channels'>
+            <ListItemIcon><QuestionAnswerIcon /></ListItemIcon>
+            <ListItemText primary='Chat' />
         </ListItem>
 
         <ListItem button component={NavLink} to='/dashboard/new-order' >

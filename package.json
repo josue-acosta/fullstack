@@ -24,6 +24,8 @@
         "mongoose": "^5.10.11",
         "nodemon": "^2.0.6",
         "passport": "^0.4.1",
-        "passport-google-oauth20": "^2.0.0"
+        "passport-google-oauth20": "^2.0.0",
+        "react-virtualized-auto-sizer": "^1.0.5",
+        "react-window": "^1.8.6"
     }
 }

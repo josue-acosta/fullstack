@@ -11,6 +11,7 @@ import NavDrawer from './NavDrawer'
 import OrderNew from './orders/OrderNew'
 import OrderTable from './orders/OrderTable'
 import OrderView from './orders/OrderView'
+import ChannelPage from './omnichannel/ChannelPage'
 
 // styles
 import { makeStyles } from '@material-ui/core/styles';
@@ -58,6 +59,7 @@ export default function Dashboard() {
                         <Route path='/dashboard/new-order' component={OrderNew} />
                         <Route path='/dashboard/orders' component={OrderTable} />
                         <Route path='/dashboard/order/:orderID' component={OrderView} />
+                        <Route path='/dashboard/channels' component={ChannelPage} />
                     </Grid>
                 </Container>
             </main>
