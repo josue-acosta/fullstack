@@ -37,6 +37,8 @@ require('./routes/dashboardRoutes')(app)
 require('./routes/orderRoutes')(app)
 // public order routes
 require('./routes/publicOrderRoutes')(app)
+// conversation routes
+require('./routes/conversationRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {

@@ -23,7 +23,7 @@ export const mainListItems = (
 
         <ListItem button component={NavLink} to='/dashboard/channels'>
             <ListItemIcon><QuestionAnswerIcon /></ListItemIcon>
-            <ListItemText primary='Chat' />
+            <ListItemText primary='Conversations' />
         </ListItem>
 
         <ListItem button component={NavLink} to='/dashboard/new-order' >
