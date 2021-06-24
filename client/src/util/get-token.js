@@ -24,6 +24,8 @@ module.exports = {
 
             // Create an access token which we will sign and return to the client,
             // containing the grant we just created
+            console.log(process.env)
+            console.log(process.env.TWILIO_ACCOUNT_SID)
             console.log(keys)
             console.log(`keys.twilioAccountSid: ${keys.twilioAccountSid}`)
             console.log(`twilioAccountSid: ${twilioAccountSid}`)
