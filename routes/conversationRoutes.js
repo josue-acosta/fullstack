@@ -1,5 +1,5 @@
 const axios = require('axios')
-const keys = require('../config/keys')
+const keys = require('../client/src/config/keys')
 const client = require('twilio')(keys.twilioAccountSid, keys.twilioAuthToken);
 const basicAuthToken = Buffer.from(`${keys.twilioAccountSid}:${keys.twilioAuthToken}`, 'utf8').toString('base64')
 const twilioUrl = keys.twilioUrl
