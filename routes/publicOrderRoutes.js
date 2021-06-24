@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const keys = require('../client/src/config/keys');
+const keys = require('../config/keys');
 
 // const PublicOrder = mongoose.model('publicOrders')
 const Order = mongoose.model('orders')

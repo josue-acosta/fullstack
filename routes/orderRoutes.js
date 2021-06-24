@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const requireLogin = require('../middlewares/requireLogin')
-const keys = require('../client/src/config/keys');
+const keys = require('../config/keys');
 
 const Order = mongoose.model('orders')
 const Global = mongoose.model('global')

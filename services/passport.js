@@ -1,7 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose')
-const keys = require('../client/src/config/keys')
+const keys = require('../config/keys')
 
 // Ensures we only bring in the model only once
 const User = mongoose.model('users')
