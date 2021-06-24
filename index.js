@@ -10,8 +10,6 @@ const passportConfig = require('./services/passport');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
-console.log(keys)
-
 // app configuration
 const app = express();
 
@@ -44,8 +42,6 @@ require('./routes/conversationRoutes')(app)
 
 
 if (process.env.NODE_ENV === 'production') {
-    console.log("Hello from productions")
-    console.log(keys)
     // express will serve production assets ( i.e client/build/main.js, client/build/main.css )
     app.use(express.static('client/build'))
 
