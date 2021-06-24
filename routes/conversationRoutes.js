@@ -4,9 +4,6 @@ const client = require('twilio')(keys.twilioAccountSid, keys.twilioAuthToken);
 const basicAuthToken = Buffer.from(`${keys.twilioAccountSid}:${keys.twilioAuthToken}`, 'utf8').toString('base64')
 const twilioUrl = keys.twilioUrl
 
-console.log('Hello from conversationRoutes')
-console.log(keys)
-
 addParticipantsToConversation = (data) => {
     client.conversations.conversations(data.sid)
         .participants
