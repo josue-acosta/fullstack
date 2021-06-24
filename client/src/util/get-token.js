@@ -19,6 +19,7 @@ module.exports = {
 
             // Create an access token which we will sign and return to the client,
             // containing the grant we just created
+            console.log(twilioAccountSid)
             const token = new AccessToken(
                 twilioAccountSid,
                 twilioApiKey,
@@ -30,7 +31,7 @@ module.exports = {
 
             // Add "grant" information to the token
             token.addGrant(chatGrant);
-
+            console.log(token)
             return token.toJwt()
         } catch (error) {
             console.log(error)
