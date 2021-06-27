@@ -5,6 +5,7 @@ const basicAuthToken = Buffer.from(`${keys.twilioAccountSid}:${keys.twilioAuthTo
 const twilioUrl = keys.twilioUrl
 
 addParticipantsToConversation = (data) => {
+    console.log("Hello from addParticipantsToConversation()")
     client.conversations.conversations(data.sid)
         .participants
         .create({
@@ -20,6 +21,7 @@ addParticipantsToConversation = (data) => {
 }
 
 createConversation = (res) => {
+    console.log("Hello from createConversation()")
     client.conversations.conversations
         .create({ friendlyName: res.req.query.From })
         .then(conversation => {
@@ -38,6 +40,8 @@ module.exports = app => {
     })
 
     app.post('/api/conversation', async (req, res) => {
+        console.log("Hello from POST api/conversation")
+
         // Get a list of conversations
         const conversationList = await axios.get(`${twilioUrl}`, {
             headers: {
@@ -45,6 +49,8 @@ module.exports = app => {
             },
         });
         const { conversations } = conversationList.data
+
+        console.log(conversations)
 
         const result = [];
         const map = new Map();
