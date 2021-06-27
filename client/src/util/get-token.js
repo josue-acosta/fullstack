@@ -8,6 +8,8 @@ const ChatGrant = AccessToken.ChatGrant;
 
 console.log(process.env)
 console.log(process.env.REACT_APP_LOREM_IPSUM)
+console.log(process.env.REACT_APP_IDENTITY)
+console.log(process.env.REACT_APP_SERVICE_SID)
 
 module.exports = {
     getToken: () => {
