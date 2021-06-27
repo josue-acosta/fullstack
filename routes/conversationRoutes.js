@@ -31,6 +31,12 @@ createConversation = (res) => {
 
 
 module.exports = app => {
+    app.get('/api/conversation', async (req, res) => {
+        console.log("Hello from GET api/conversation")
+
+        res.sendStatus(200)
+    })
+
     app.post('/api/conversation', async (req, res) => {
         // Get a list of conversations
         const conversationList = await axios.get(`${twilioUrl}`, {
