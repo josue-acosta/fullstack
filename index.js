@@ -41,7 +41,6 @@ require('./routes/publicOrderRoutes')(app)
 require('./routes/conversationRoutes')(app)
 
 require('dotenv').config()
-console.log(process.env)
 
 if (process.env.NODE_ENV === 'production') {
     // express will serve production assets ( i.e client/build/main.js, client/build/main.css )
