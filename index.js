@@ -37,7 +37,10 @@ require('./routes/dashboardRoutes')(app)
 require('./routes/orderRoutes')(app)
 // public order routes
 require('./routes/publicOrderRoutes')(app)
+// conversation routes
+require('./routes/conversationRoutes')(app)
 
+require('dotenv').config()
 
 if (process.env.NODE_ENV === 'production') {
     // express will serve production assets ( i.e client/build/main.js, client/build/main.css )
