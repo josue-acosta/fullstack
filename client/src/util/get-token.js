@@ -7,9 +7,7 @@ const AccessToken = require('twilio').jwt.AccessToken;
 const ChatGrant = AccessToken.ChatGrant;
 
 console.log(process.env)
-console.log(`process.env.REACT_APP_LOREM_IPSUM: ${process.env.REACT_APP_LOREM_IPSUM}`)
-console.log(`process.env.REACT_APP_IDENTITY: ${process.env.REACT_APP_IDENTITY}`)
-console.log(`process.env.REACT_APP_TWILIO_ACCOUNT_SID: ${process.env.REACT_APP_TWILIO_ACCOUNT_SID}`)
+console.log(process.env.REACT_APP_LOREM_IPSUM)
 
 module.exports = {
     getToken: () => {
