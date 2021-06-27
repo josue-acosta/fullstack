@@ -42,8 +42,6 @@ require('./routes/conversationRoutes')(app)
 
 require('dotenv').config()
 
-// console.log(process.env.REACT_APP_LOREM_IPSUM)
-
 
 if (process.env.NODE_ENV === 'production') {
     // express will serve production assets ( i.e client/build/main.js, client/build/main.css )
