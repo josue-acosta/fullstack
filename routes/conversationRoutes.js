@@ -34,7 +34,6 @@ createConversation = (res) => {
 module.exports = app => {
     app.get('/api/conversation', async (req, res) => {
         console.log("Hello from GET api/conversation")
-        // console.log(basicAuthToken)
 
         try {
             // fetch data from a url endpoint
@@ -58,40 +57,48 @@ module.exports = app => {
 
     app.post('/api/conversation', async (req, res) => {
         console.log("Hello from POST api/conversation")
+        console.log(twilioUrl)
+        console.log(twilioAccountSid)
+        console.log(twilioAuthToken)
 
-        // Get a list of conversations
-        const conversationList = await axios.get(`${twilioUrl}`, {
-            headers: {
-                'Authorization': `Basic ${basicAuthToken}`
-            },
-        }).catch(errorHandler);
+        try {
+            // Get a list of conversations
+            const conversationList = await axios.get(`${twilioUrl}`, {
+                headers: {
+                    'Authorization': `Basic ${basicAuthToken}`
+                },
+            }).catch(errorHandler);
 
-        const { conversations } = conversationList.data
+            const { conversations } = conversationList.data
 
-        console.log(conversations)
+            console.log(conversations)
 
-        const result = [];
-        const map = new Map();
-        for (const element of conversations) {
-            if (!map.has(element.sid)) {
-                map.set(element.sid, true);
-                result.push({
-                    sid: element.sid,
-                    friendlyName: element.friendly_name
-                });
+            const result = [];
+            const map = new Map();
+            for (const element of conversations) {
+                if (!map.has(element.sid)) {
+                    map.set(element.sid, true);
+                    result.push({
+                        sid: element.sid,
+                        friendlyName: element.friendly_name
+                    });
+                }
             }
-        }
 
-        // Check to see if any conversation exist
-        if (conversations.length <= 0) {
-            createConversation(res)
-        }
-
-        // Create Conversation if it doesn't already exisit
-        conversations.forEach(element => {
-            if (element.friendly_name !== res.req.query.From) {
+            // Check to see if any conversation exist
+            if (conversations.length <= 0) {
                 createConversation(res)
             }
-        });
+
+            // Create Conversation if it doesn't already exisit
+            conversations.forEach(element => {
+                if (element.friendly_name !== res.req.query.From) {
+                    createConversation(res)
+                }
+            });
+        } catch (error) {
+            // appropriately handle the error
+            console.log("error");
+        }
     })
 }
