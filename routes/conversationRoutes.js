@@ -43,37 +43,43 @@ module.exports = app => {
         console.log("Hello from POST api/conversation")
 
         // Get a list of conversations
-        const conversationList = await axios.get(`${twilioUrl}`, {
-            headers: {
-                'Authorization': `Basic ${basicAuthToken}`
-            },
-        });
-        const { conversations } = conversationList.data
+        try {
+            const conversationList = await axios.get(`${twilioUrl}`, {
+                headers: {
+                    'Authorization': `Basic ${basicAuthToken}`
+                },
+            });
+            const { conversations } = conversationList.data
 
-        console.log(conversations)
+            console.log(conversations)
 
-        const result = [];
-        const map = new Map();
-        for (const element of conversations) {
-            if (!map.has(element.sid)) {
-                map.set(element.sid, true);
-                result.push({
-                    sid: element.sid,
-                    friendlyName: element.friendly_name
-                });
+            const result = [];
+            const map = new Map();
+            for (const element of conversations) {
+                if (!map.has(element.sid)) {
+                    map.set(element.sid, true);
+                    result.push({
+                        sid: element.sid,
+                        friendlyName: element.friendly_name
+                    });
+                }
             }
-        }
 
-        // Check to see if any conversation exist
-        if (conversations.length <= 0) {
-            createConversation(res)
-        }
-
-        // Create Conversation if it doesn't already exisit
-        conversations.forEach(element => {
-            if (element.friendly_name !== res.req.query.From) {
+            // Check to see if any conversation exist
+            if (conversations.length <= 0) {
                 createConversation(res)
             }
-        });
+
+            // Create Conversation if it doesn't already exisit
+            conversations.forEach(element => {
+                if (element.friendly_name !== res.req.query.From) {
+                    createConversation(res)
+                }
+            });
+        } catch (e) {
+            console.error('Failure!');
+            console.error(e.response.status);
+            throw new Error(e);
+        }
     })
 }
