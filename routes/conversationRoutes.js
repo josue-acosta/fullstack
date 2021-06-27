@@ -31,17 +31,27 @@ createConversation = (res) => {
         .catch(err => console.log('Unable to Create Conversation', err));
 }
 
-errorHandler = (error) => {
-    if (typeof conversationList === 'undefined') {
-        console.log('conversationList is undefined')
-    } else {
-        throw error
-    }
-}
-
 module.exports = app => {
     app.get('/api/conversation', async (req, res) => {
         console.log("Hello from GET api/conversation")
+        // console.log(basicAuthToken)
+
+        try {
+            // fetch data from a url endpoint
+            const conversationList = await axios.get(`${twilioUrl}`, {
+                headers: {
+                    'Authorization': `Basic ${basicAuthToken}`
+                },
+            });
+            const { conversations } = conversationList.data
+
+            console.log(conversations)
+
+            // return conversations;
+        } catch (error) {
+            // appropriately handle the error
+            console.log("error");
+        }
 
         res.sendStatus(200)
     })
