@@ -1,8 +1,6 @@
 const AccessToken = require('twilio').jwt.AccessToken;
 const ChatGrant = AccessToken.ChatGrant;
 
-console.log(process.env)
-
 module.exports = {
     getToken: () => {
         try {
