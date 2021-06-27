@@ -6,6 +6,8 @@ const identity = 'testPineapple';
 const AccessToken = require('twilio').jwt.AccessToken;
 const ChatGrant = AccessToken.ChatGrant;
 
+console.log(process.env)
+console.log(process.env.REACT_APP_LOREM_IPSUM)
 
 module.exports = {
     getToken: () => {
