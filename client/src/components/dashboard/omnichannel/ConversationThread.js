@@ -75,8 +75,6 @@ class ConversationThread extends Component {
             this.loadMessagesFor(this.state.conversationProxy);
 
             if (!this.state.boundConversations.has(this.state.conversationProxy)) {
-                console.log('hello from component did update')
-                console.log(!this.state.boundConversations.has(this.state.conversationProxy))
                 let newConversation = this.state.conversationProxy;
                 newConversation.on('messageAdded', m => this.messageAdded(m, newConversation));
                 this.setState({ boundConversations: new Set([...this.state.boundConversations, newConversation]) });
