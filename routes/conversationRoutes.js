@@ -2,10 +2,8 @@ const axios = require('axios')
 const keys = require('../config/keys')
 const client = require('twilio')(keys.twilioAccountSid, keys.twilioAuthToken);
 const basicAuthToken = Buffer.from(`${keys.twilioAccountSid}:${keys.twilioAuthToken}`, 'utf8').toString('base64')
-const twilioUrl = keys.twilioUrl
 
 addParticipantsToConversation = (data) => {
-    console.log("Hello from addParticipantsToConversation()")
     client.conversations.conversations(data.sid)
         .participants
         .create({
@@ -16,62 +14,43 @@ addParticipantsToConversation = (data) => {
 
     client.conversations.conversations(data.sid)
         .participants
-        .create({ identity: 'testPineapple' })
+        .create({ identity: keys.identity })
         .catch(err => console.log('Unable to bind Participant', err));
 }
 
-createConversation = (res) => {
-    console.log("Hello from createConversation()")
+addInitMessageToConversation = (conversation, req) => {
+    client.conversations.conversations(conversation.sid)
+        .messages
+        .create({
+            author: conversation.friendlyName,
+            body: req.body.Body
+        })
+        .catch(err => console.log('Unable to bind Message', err));
+}
+
+createConversation = (req) => {
     client.conversations.conversations
-        .create({ friendlyName: res.req.query.From })
+        .create({ friendlyName: req.body.From })
         .then(conversation => {
-            console.log(`Conversation '${conversation.friendlyName}' Sucessfully Created`)
             addParticipantsToConversation(conversation)
+            addInitMessageToConversation(conversation, req)
         })
         .catch(err => console.log('Unable to Create Conversation', err));
 }
 
 module.exports = app => {
-    app.get('/api/conversation', async (req, res) => {
-        console.log("Hello from GET api/conversation")
-
-        try {
-            // fetch data from a url endpoint
-            const conversationList = await axios.get(`${twilioUrl}`, {
-                headers: {
-                    'Authorization': `Basic ${basicAuthToken}`
-                },
-            });
-            const { conversations } = conversationList.data
-
-            console.log(conversations)
-
-            // return conversations;
-        } catch (error) {
-            // appropriately handle the error
-            console.log("error");
-        }
-
-        res.sendStatus(200)
-    })
-
     app.post('/api/conversation', async (req, res) => {
-        console.log("Hello from POST api/conversation")
-        console.log(twilioUrl)
-        console.log(twilioAccountSid)
-        console.log(twilioAuthToken)
-
         try {
             // Get a list of conversations
-            const conversationList = await axios.get(`${twilioUrl}`, {
+            const conversationList = await axios.get(`${keys.twilioUrl}`, {
                 headers: {
                     'Authorization': `Basic ${basicAuthToken}`
                 },
-            }).catch(errorHandler);
+            }).catch(error => {
+                console.log("There's been an error in conversationList")
+            });
 
             const { conversations } = conversationList.data
-
-            console.log(conversations)
 
             const result = [];
             const map = new Map();
@@ -87,18 +66,19 @@ module.exports = app => {
 
             // Check to see if any conversation exist
             if (conversations.length <= 0) {
-                createConversation(res)
+                createConversation(req)
             }
 
             // Create Conversation if it doesn't already exisit
-            conversations.forEach(element => {
-                if (element.friendly_name !== res.req.query.From) {
-                    createConversation(res)
-                }
-            });
+            const check = result.some((item) => item.friendlyName === req.body.From)
+            if (check) {
+                null
+            } else {
+                createConversation(req)
+            }
+
         } catch (error) {
-            // appropriately handle the error
-            console.log("error");
+            console.log("There's been an error in POST /api/conversation");
         }
     })
 }
