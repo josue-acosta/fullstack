@@ -13,7 +13,7 @@ const keys = require('./config/keys');
 // app configuration
 const app = express();
 
-app.use(bodyParser.json());
+app.use(express.urlencoded())
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
