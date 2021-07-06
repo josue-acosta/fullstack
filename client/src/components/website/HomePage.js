@@ -52,6 +52,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HomePage() {
     const classes = useStyles();
+    const menuLink = React.forwardRef((props, ref) => <div ref={ref}><NavLink {...props} /></div>)
+    const cakeOrderFormLink = React.forwardRef((props, ref) => <div ref={ref}><NavLink {...props} /></div>)
 
     return (
         <React.Fragment>
@@ -70,13 +72,13 @@ export default function HomePage() {
                         <div className={classes.heroButtons}>
                             <Grid container spacing={2} justify='center'>
                                 <Grid item>
-                                    <Button variant='contained' color='primary'>
-                                        <NavLink to='/menu' className={classes.navLinkPrimary} >Menu</NavLink>
+                                    <Button variant='contained' color='primary' component={menuLink} to="/menu">
+                                        Menu
                                     </Button>
                                 </Grid>
                                 <Grid item>
-                                    <Button variant='outlined' color='primary'>
-                                        <NavLink to='/cake-order-form' className={classes.navLinkSecondary} >Order a Cake</NavLink>
+                                    <Button variant='outlined' color='primary' component={cakeOrderFormLink} to="/cake-order-form">
+                                        Order a Cake
                                     </Button>
                                 </Grid>
                             </Grid>

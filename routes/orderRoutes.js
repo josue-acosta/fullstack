@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const requireLogin = require('../middlewares/requireLogin')
+// const requireLogin = require('../middlewares/requireLogin') [ DEMO ]
 const keys = require('../config/keys');
 
 const Order = mongoose.model('orders')
@@ -12,13 +12,15 @@ module.exports = app => {
         res.send(order);
     })
 
-    app.get('/api/orders', requireLogin, async (req, res) => {
+    // app.get('/api/orders', requireLogin, async (req, res) => [ DEMO ]
+    app.get('/api/orders', async (req, res) => {
         const orders = await Order.find({})
 
         res.send(orders);
     })
 
-    app.post('/api/submit-order', requireLogin, async (req, res) => {
+    // app.get('/api/orders', requireLogin, async (req, res) => { [ DEMO ]
+    app.post('/api/submit-order', async (req, res) => {
         const id = keys.countNumber
         const { count } = await Global.findById(id)
 

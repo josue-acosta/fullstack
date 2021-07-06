@@ -16,20 +16,21 @@ const styles = theme => ({
 });
 
 class DashboardPage extends Component {
-    renderContent() {
-        switch (this.props.auth) {
-            case false:
-                return <Typography variant='h2'>Not Authorized</Typography>
-            default:
-                return <Layout />
-        }
-    }
+    // renderContent() {
+    //     switch (this.props.auth) {
+    //         case false:
+    //             return <Typography variant='h2'>Not Authorized</Typography>
+    //         default:
+    //             return <Layout />
+    //     }
+    // } [ DEMO ]
 
     render() {
         return (
             <>
                 <CssBaseline />
-                {this.renderContent()}
+                {/* {this.renderContent()} [ DEMO ] */}
+                <Layout />
             </>
         )
     }

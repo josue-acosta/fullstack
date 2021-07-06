@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 const keys = require('../config/keys');
-
-// const PublicOrder = mongoose.model('publicOrders')
 const Order = mongoose.model('orders')
 const Global = mongoose.model('global')
 

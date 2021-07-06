@@ -23,16 +23,16 @@ const styles = theme => ({
 });
 
 class HeaderBar extends Component {
-    renderContent() {
-        switch (this.props.auth) {
-            case null:
-                return;
-            case false:
-                return;
-            default:
-                return <Button key='dashboard' color='inherit' component={NavLink} to='/dashboard'>Dashboard</Button>
-        }
-    }
+    // renderContent() {
+    //     switch (this.props.auth) {
+    //         case null:
+    //             return;
+    //         case false:
+    //             return;
+    //         default:
+    //             return <Button key='dashboard' color='inherit' component={NavLink} to='/dashboard'>Dashboard</Button>
+    //     }
+    // } [ DEMO ]
 
     render() {
         const { classes } = this.props;
@@ -42,7 +42,8 @@ class HeaderBar extends Component {
                 <AppBar position='static'>
                     <Toolbar>
                         <div className={classes.title}>
-                            {this.renderContent()}
+                            {/* {this.renderContent()} [ DEMO ] */}
+                            <Button key='dashboard' color='inherit' component={NavLink} to='/dashboard'>Dashboard</Button>
                         </div>
                         <NavLink to='/' className={classes.navLink} >Home</NavLink>
                         <NavLink to='/menu' className={classes.navLink} >Menu</NavLink>
