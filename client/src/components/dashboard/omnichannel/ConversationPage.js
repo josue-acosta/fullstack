@@ -22,7 +22,7 @@ const { getToken } = require('../../../util/get-token');
 
 class ConversationPage extends Component {
     state = {
-        name: "testPineapple",
+        name: "MiSystema",
         token: null,
         statusString: null,
         conversationsReady: false,
@@ -120,7 +120,7 @@ class ConversationPage extends Component {
 
         return (
             <>
-                <h2>{this.state.statusString}</h2>
+                <h2>{this.state.statusString} Text 515-414-8323 to see yor chat here.</h2>
                 <Grid container justify="center" spacing={1}>
                     <ConversationsList
                         conversations={conversations}

@@ -7,7 +7,7 @@ import Layout from './Layout'
 // styles
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
     root: {
