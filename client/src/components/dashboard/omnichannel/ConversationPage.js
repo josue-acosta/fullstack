@@ -22,7 +22,7 @@ const { getToken } = require('../../../util/get-token');
 
 class ConversationPage extends Component {
     state = {
-        name: "MiSystema",
+        name: "testPineapple",
         token: null,
         statusString: null,
         conversationsReady: false,
